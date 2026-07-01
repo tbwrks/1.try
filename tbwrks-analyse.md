@@ -55,6 +55,18 @@ Kernaussage zum methodischen Ansatz: Man beginne bei der Idee und dem richtigen 
 - Rebranding-Projekt, das die visuelle und strategische Außendarstellung von PL Talents modernisiert hat ("von Eindruck zu Ausdruck", laut Fallbeschreibung).
 - Weitere Details zum konkreten Leistungsumfang waren über die verfügbaren Quellen nicht auffindbar.
 
+### Blaues Parkett – Die Tanzschifffahrt um den Starnberger See
+- Event-Case: Tanzschiff-Kreuzfahrt (MS Starnberg) mit Shows, DJ-Musik und Tanz auf mehreren Decks, Ableger der Tanzschule-Welt (Starnberg-Anleger, S6-Anbindung).
+- tbwrks lt. eigener Portfolio-Referenz an Konzeption/Kreation des Events beteiligt.
+
+### Gottschall Architektur
+- Identitätsentwicklung/Corporate Design für ein Architekturbüro (Markenidentität), laut Portfolio-Auflistung auf tbwrks.com.
+
+### "Strikes Back" – Kino-Werbespot für "Home of Electro"
+- Kreativ-/Konzeptarbeit für einen Kino-Werbespot der Elektro-Marke "Home of Electro".
+
+*(Zusätzlich zu den bereits ausführlicher recherchierten Cases TWS Tanzschule, ERC Ingolstadt und PL Talents listet die Portfolio-Übersicht von tbwrks.com weitere Projekte wie die drei oben genannten; Detailtiefe ist hier aufgrund der weiterhin blockierten Direktzugriffe geringer.)*
+
 ## 5. Online-Präsenz
 
 - Website: tbwrks.com (WordPress, Cases-Unterseiten wie /cases/tanz)
@@ -85,5 +97,6 @@ Kernaussage zum methodischen Ansatz: Man beginne bei der Idee und dem richtigen 
 - https://www.tanz.de/ und https://www.tanz.de/impressum
 - https://www.linkedin.com/company/p-l-talents / https://www.pl-talents.com/
 - https://www.werbeagentur.de/de/scoring/full-service-agentur/neuburg-an-der-donau
+- https://ticketing.nimbuscloud.at/shop/2397/blaues-parkett-die-tanzschifffahrt-um-den-starnberger-see-48
 
-*Hinweis: Diese Analyse basiert ausschließlich auf öffentlich zugänglichen Suchergebnissen und konnte die Originalseiten nicht direkt einsehen (Netzwerk-Policy blockierte den direkten Seitenabruf). Für eine belastbare Unternehmensbewertung empfiehlt sich der direkte Abgleich mit tbwrks.com sowie ein Gespräch mit dem Inhaber.*
+*Hinweis: Diese Analyse basiert ausschließlich auf öffentlich zugänglichen Suchergebnissen und konnte die Originalseiten nicht direkt einsehen (Netzwerk-Policy blockierte den direkten Seitenabruf, erneut getestet am 01.07.2026 – weiterhin HTTP 403). Für eine belastbare Unternehmensbewertung empfiehlt sich der direkte Abgleich mit tbwrks.com sowie ein Gespräch mit dem Inhaber.*
