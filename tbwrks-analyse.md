@@ -36,6 +36,7 @@ Kernaussage zum methodischen Ansatz: Man beginne bei der Idee und dem richtigen 
 - Rolle: Creative Director / Inhaber von tbwrks
 - Erfahrung: laut Website rund zwei Jahrzehnte Erfahrung in Grafik, Kreation, Werbung, Layout, Design, Konzeption und Strategie für große und kleine Marken, Unternehmen und Agenturen im In- und Ausland.
 - LinkedIn-Profil vorhanden: "Tobias Bitterwolf – Creative Direction – tbwrks" (de.linkedin.com/in/tobias-bitterwolf-a5b2b1249) – Inhalt konnte wegen Zugriffsbeschränkung nicht im Detail ausgelesen werden.
+- Zusätzlich als Freelancer auf der Plattform Malt gelistet ("Tobias Bitterwolf, Branding | Creation | Idea", malt.de/profile/tobiasbitterwolf bzw. malt.ch/profile/tobiasbitterwolf) – untermauert die Einordnung als Ein-Personen-Freelancer/Studio, das auch über Freelancer-Marktplätze akquiriert. Profildetails (Tagessatz, Skills, Bewertungen) waren wegen Zugriffsbeschränkung nicht einsehbar.
 - Persönlicher Bezug: Eishockey-Fan des ERC Ingolstadt (siehe Case unten).
 
 ## 4. Bekannte Projekte / Referenzen (Cases)
@@ -59,7 +60,8 @@ Kernaussage zum methodischen Ansatz: Man beginne bei der Idee und dem richtigen 
 
 - Website: tbwrks.com (WordPress, Cases-Unterseiten wie /cases/tanz)
 - LinkedIn: persönliches Profil von Tobias Bitterwolf vorhanden, keine separate Unternehmensseite für tbwrks gefunden.
-- Instagram: kein verifizierter offizieller @tbwrks-Account auffindbar; ein ähnlich klingender Account "@tbworks" (Grafik Tasarım/Türkei) ist erkennbar **nicht** identisch mit tbwrks.com.
+- Instagram: kein verifizierter offizieller @tbwrks-Account auffindbar; ein ähnlich klingender Account "@tbworks" (Grafik Tasarım/Türkei, ~483 Follower) ist erkennbar **nicht** identisch mit tbwrks.com.
+- Freelancer-Plattform: Profil auf Malt (malt.de/malt.ch) unter dem Namen Tobias Bitterwolf.
 - Branchenverzeichnisse: gelistet auf agentur.de ("Top Agentur in Neuburg (Donau)") und im werbeagentur.de-Scoring-Umfeld für die Region Neuburg an der Donau; keine sichtbaren Kununu-/Google-Bewertungen in der Recherche gefunden.
 - Keine Hinweise auf Handelsregistereintrag, Mitarbeiterzahl, Umsatz oder Preisangaben gefunden – deutet auf eine kleine, ggf. Ein-Personen-Struktur hin.
 
@@ -85,5 +87,6 @@ Kernaussage zum methodischen Ansatz: Man beginne bei der Idee und dem richtigen 
 - https://www.tanz.de/ und https://www.tanz.de/impressum
 - https://www.linkedin.com/company/p-l-talents / https://www.pl-talents.com/
 - https://www.werbeagentur.de/de/scoring/full-service-agentur/neuburg-an-der-donau
+- https://www.malt.de/profile/tobiasbitterwolf / https://www.malt.ch/profile/tobiasbitterwolf
 
 *Hinweis: Diese Analyse basiert ausschließlich auf öffentlich zugänglichen Suchergebnissen und konnte die Originalseiten nicht direkt einsehen (Netzwerk-Policy blockierte den direkten Seitenabruf). Für eine belastbare Unternehmensbewertung empfiehlt sich der direkte Abgleich mit tbwrks.com sowie ein Gespräch mit dem Inhaber.*
