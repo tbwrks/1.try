@@ -21,6 +21,8 @@ SCHMERZPUNKT ZG:    [Welcher Einwand/Vorbehalt? „Sag mir, warum ich…"]
 WETTBEWERB:         [Wie positionieren sich die anderen? Was ist naheliegend/gewohnt?]
 ZIEL DES KUNDEN:    [Was soll erreicht werden?]
 BUDGET/UMFANG:      [grob — entscheidet Projekttyp & Anzahl Richtungen]
+BETREIBER-KAPAZITÄT:[Wie viel Zeit/Energie hat der Kunde selbst? — entscheidet, wie
+                     autark das System laufen muss (Batch-Formate, Templates)]
 ASSETS VORHANDEN:   [Name? Logo? Fotos? Farben?]
 ```
 
@@ -60,8 +62,11 @@ Jede Richtung durch **dasselbe Raster**: `Zeichen · Farbe · Schrift · Bild ·
 `FARBE — Wirkung: [was es auslösen soll] → Codierung: [Primär/Kontrast/Sekundär…]`
 (analog für Schrift, Form, Bild, Zeichen).
 
-**Schritt 9 — Touchpoints kanalisieren.** Vollständige Liste statt Beispiele; passend zur
-Branche (Offline / Bewegtbild / Social / Web / Event / Print / Merch).
+**Schritt 9 — System & Funnel, dann Touchpoints.** [Ferber-Muster: Story → System → Funnel
+→ Website] Erst die Gewinnungs-Kette als Stufen denken — *Finden → Verstehen → Wollen →
+Kommen → Wiederkommen* — dann je Stufe die Touchpoints kanalisieren (Offline / Bewegtbild /
+Social / Web / Event / Print / Merch). Bei knapper Betreiber-Kapazität: nur Formate, die
+batch-produzierbar ohne tägliche Owner-Zeit laufen.
 
 **Schritt 10 — Fortentwicklung & Wert-Rahmung.** Ausbau (Plakat/Web/Merch/Hashtags) andeuten;
 bei Budget-Skepsis „Warum das Ganze?" ergänzen.
