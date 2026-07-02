@@ -69,8 +69,46 @@ Zählbasis: Textextraktion aller Seiten (`analyse/text/`) + visuelle Prüfung Bi
   Frühfortschritt für den Kunden. (In case-library als Ferber-Besonderheit erwähnt → als
   wiederverwendbares Muster kandidiert.)
 
-## Offen (noch nicht voll visuell geprüft)
+## E. Nachtrag: Struktur + visuelle Stichprobe aller Projekte (Index + Renders)
 
-ERC, Fetsch, Ferber, DEHOGA, tws, Natugena wurden bisher strukturell (Text + Grep)
-validiert, aber noch nicht seiten-visuell im Detail. Vor dem finalen Blueprint gezielt
-Schlüsselseiten dieser Projekte visuell gegenlesen (Design-/Visualisierungsmuster).
+Vollständiger Seiten-Index aller 10 Projekte gezogen; Schlüsselseiten von Fetsch,
+DEHOGA, tws, ERC visuell gegengelesen. Zusätzliche gesicherte Muster:
+
+- **[GESICHERT] Formel „Klares Ziel + Tiefes Verständnis = Strategische Gestaltung"** —
+  Titelnah in **4/10** (MaWi S.3, Fetsch S.3, DEHOGA S.3, Ferber S.12). Feste Eröffnungs-Formel.
+- **[GESICHERT] „Wirkung → Codierung"-Folienpaar je Gestaltungselement** — visuell bestätigt
+  (tws S.14 „Farbe/Wirkung/Codierung"; Formen/Bilder analog S.22/26). Macht „Herleitung statt
+  Geschmack" zum festen Folienbaustein.
+- **[GESICHERT] Flieder als tbwrks-Meta-Markenfarbe** für Überschriften/Captions über alle
+  Kunden hinweg — visuell in BiSchw, Fetsch, DEHOGA, tws, ERC. (= konstante Präsentations-
+  Handschrift, unabhängig von der jeweiligen Kundenfarbe.)
+- **[GESICHERT] „Decodierung der Basis" → 4 Schlagworte je Richtung** (DEHOGA S.24ff:
+  Tradition→Beständigkeit/Symbolik/Werte; visuell b/w-Moodboard + Flieder-Wortliste).
+- **[GESTÜTZT] „Basis aus X"-Exploration** — Richtungen aus verschiedenen Ankern erzeugt:
+  Fetsch (Person/Zielgebiet/Leistung), Ferber (Gefühl/Maximen), Natugena (Baustein/
+  Neurotransmitter/Stoffwechsel), BWAgrar (Hof/Horizont/Heute). **4/10.**
+- **[GESTÜTZT] Sub-Navigation im Kapitelkopf** — Kapitel zeigt seine Unterschritte als Liste
+  mit hervorgehobenem aktuellen Schritt: „01 Strategie – Decodierung – Positionierung – Name –
+  Botschaft" (Fetsch S.8/14/22/32; Ferber, DEHOGA analog).
+- **[GESTÜTZT] Kontrast-Gegenüberstellung visuell** — zwei Welten nebeneinander, gewählte oft
+  hervorgehoben, verworfene ausgegraut (Fetsch S.73 Klarheit vs. Emotion, mit Verbindungslinie).
+- **[GESTÜTZT] Wertekette als Pfeil-Leiter** Marke→Strategie→Kern→Leitidee→Kommunikation
+  (ERC S.11/56) = „Marke vor Marketing" als Diagramm.
+- **[GESTÜTZT] KPI-Reframe „keep people interested/informed/involved/integrated/inspired"** —
+  MaWi S.23/26, DEHOGA S.16, Ferber S.21. **3/10**, ersetzt klassische Kennzahlen.
+- **[GESTÜTZT] Wert-/Honorar-Rechtfertigung** „nicht maximale Veränderung mit minimalem
+  Aufwand – sondern echte Begehrlichkeit mit maximalem Effekt" — DEHOGA S.11/81, Fetsch S.7,
+  Ferber S.19. **3/10.** Oft eigenes Kapitel „Creative Consulting – Warum das Ganze?" (DEHOGA S.80).
+- **[GESICHERT] Signatur-Leitsatz** „Es muss nicht immer viel sein, nur gut ist schon nicht
+  leicht." — DEHOGA S.17/86, ERC S.16/61 (Variante), MaWi S.25 (Variante). **3/10.**
+- **[BEOBACHTUNG] Iteration im selben Dokument** — mehrere Präsentationsstände in einer Datei
+  (ERC v1 S.1–42 → v2 S.43–97 mit Verfeinerungen; DEHOGA 3 Stände; Fetsch 2 Phasen mit je
+  eigener Dank-Folie/Datum). Belegt den Grob-zu-fein-Prozess über die Zeit.
+
+## Fazit der Validierung
+
+Die Selbst-Kodifizierung ist in der Substanz **bestätigt**. Wichtigste Schärfungen:
+(1) **Decodierung/Codierung→Wirkung** ist die eigentliche Signatur, nicht „Golden Why".
+(2) **Projekttyp F (Editorial-Relaunch)** ergänzen. (3) Kapitelnamen sind **typ-abhängig**,
+der Bogen Analyse→Strategie→Visualität→Anwendung ist konstant. Damit ist die Basis für das
+Betriebssystem (`betriebssystem/`) tragfähig belegt.
