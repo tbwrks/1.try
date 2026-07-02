@@ -86,6 +86,16 @@ Erfolgsbeteiligung nur **zusätzlich** zum Fixum: fester Prozentsatz (ein Wert, 
 ### M9 — TAGESBUCHUNG (Typ Hofmann)
 Für Bestandskunden mit klarem Scope: N Tage × 880 €, Realisationsmanagement als eigene Position (Stunden × 90 €), Mehraufwand 110 €/h. Exklusive Leistungen explizit auflisten (Korrekturen >2, offene Daten, Styleguide etc. — Hofmann-Formulierung übernehmen).
 
+### M10 — KI-ENABLEMENT (neu: verkauft KI als Leistung statt sie zu verschenken)
+Für Mittelstandskunden, die „irgendwas mit KI" wollen, aber nicht wissen wie.
+| Größe | Umfang | Preis |
+|---|---|---|
+| S | KI-Potenzial-Workshop: Wo spart KI dem Kunden Zeit/Geld (Marketing, Content, Prozesse), konkrete Empfehlungen | 950 € (1 Tag STRAT) |
+| M | + Einrichtung von 2–3 Content-/Marketing-Workflows im Unternehmen des Kunden (z. B. Text-, Bild-, Social-Media-Erstellung in Marken-DNA) inkl. Einweisung | 2.800 € |
+| L | + laufende Betreuung/Weiterentwicklung der Workflows | M + 350 €/Monat |
+
+Positionierung nach außen: **„KI-gestützt, von Hand geführt"** — KI ist Werkzeug im tbwrks-Prozess (steht bereits in den Angeboten: „KI-generierte Visuals"), Kuratierung, Geschmack und Verantwortung bleiben beim Creative Director. Die eigene KI-Effizienz ist **kein Rabattgrund**: verkauft wird das Ergebnis zum Paketpreis, nicht die Stunde (genau dafür wurden Tagessätze aus den Angeboten entfernt).
+
 ## 3. Standardkonditionen (stehen in JEDEM Angebot)
 
 - **Zahlung:** ab 5.000 €: 30 % bei Auftrag / 40 % bei Zwischenabnahme / 30 % bei Übergabe. Unter 5.000 €: 50 % bei Auftrag / 50 % bei Übergabe. Zahlungsziel 7 Tage.
