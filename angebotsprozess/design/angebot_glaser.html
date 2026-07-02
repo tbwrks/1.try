@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family:'AvBook';  src:url('fixed_AAAAAD_Avenir-Book.ttf'); }
+  @font-face { font-family:'AvHeavy'; src:url('fixed_AAAAAG_Avenir-Heavy.ttf'); font-weight:700; }
+  @font-face { font-family:'ANReg';   src:url('fixed_AAAAAF_AvenirNext-Regular.ttf'); }
+  @font-face { font-family:'ANBold';  src:url('fixed_AAAAAE_AvenirNext-Bold.ttf'); font-weight:700; }
+  @font-face { font-family:'Mulish';  src:url('Mulish.ttf'); font-weight:100 900; }
+
+  :root {
+    --lav: #c6b6da;
+    --band: #efefef;
+    --book: 'AvBook','Mulish',sans-serif;
+    --heavy: 'AvHeavy','ANBold','Mulish',sans-serif;
+    --reg: 'ANReg','Mulish',sans-serif;
+    --bold: 'ANBold','Mulish',sans-serif;
+  }
+  @page { size: A4; margin: 0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: var(--reg); font-size:10pt; color:#000; width:595pt; }
+  .page { width:595pt; height:841.5pt; position:relative; overflow:hidden; break-after:page; }
+  .page:last-child { break-after:auto; }
+  .abs { position:absolute; }
+  b, strong { font-family: var(--bold); font-weight:700; }
+
+  /* Footer (alle Seiten) */
+  .footer { position:absolute; bottom:44pt; left:0; width:595pt; font-size:7pt; line-height:10pt; }
+  .footer .c1 { position:absolute; left:73.9pt; }
+  .footer .c2 { position:absolute; left:190.6pt; }
+  .footer .c3 { position:absolute; left:307.4pt; }
+  .footer .fb { font-family:var(--bold); font-weight:700; }
+  .footer u { text-underline-offset:1.5pt; }
+
+  /* Seite 1 */
+  .logo { position:absolute; left:372.5pt; top:56.7pt; width:116.8pt; }
+  .logo img { width:100%; display:block; }
+  .addr { font-family:var(--book); font-size:9pt; line-height:12pt; }
+  .lbl6 { font-family:var(--book); font-size:6pt; }
+  .val9 { font-family:var(--book); font-size:9pt; }
+  .h-angebot { font-family:var(--heavy); font-weight:700; font-size:11pt; letter-spacing:0.5pt; }
+  .letter { position:absolute; left:73.9pt; top:346pt; width:447pt; font-size:10pt; line-height:14pt; }
+  .letter p { margin-bottom:14pt; }
+  .tiers { margin:0 0 6pt 36pt; }
+  .tier { margin-bottom:11pt; }
+  .tier .tt { font-family:var(--bold); font-weight:700; font-size:10pt; color:var(--lav); }
+  .tier .ts { font-size:8pt; line-height:11pt; margin-top:3pt; }
+  .abschlag { position:absolute; left:73.9pt; bottom:82pt; font-family:var(--bold); font-weight:700; font-size:7pt; }
+
+  /* Modulseiten */
+  .m-title { position:absolute; left:109.3pt; top:27pt; font-family:var(--bold); font-weight:700; font-size:11pt; color:var(--lav); }
+  .m-sub   { position:absolute; left:109.3pt; top:48pt; font-family:var(--book); font-size:8pt; }
+  .tablewrap { position:absolute; left:52pt; top:80pt; width:491.3pt; }
+  .thead { display:flex; font-family:var(--bold); font-weight:700; font-size:7pt; padding-bottom:8pt; }
+  .thead .h1 { width:89pt; padding-left:14pt; }
+  .thead .h2 { flex:1; text-align:center; }
+  .thead .h3 { width:100pt; text-align:right; padding-right:8pt; }
+  .trow { display:flex; padding:15pt 0 12pt 0; }
+  .trow.band { background:var(--band); }
+  .trow .c-name { width:89pt; padding-left:4pt; font-family:var(--bold); font-weight:700; font-size:8pt; line-height:11pt; }
+  .trow .c-desc { flex:1; font-size:8pt; line-height:11pt; padding-right:16pt; }
+  .trow .c-sum  { width:100pt; text-align:right; padding-right:8pt; font-size:7pt; align-self:center; white-space:nowrap; }
+  .trow-total { display:flex; padding:14pt 0; }
+  .trow-total .tl { flex:1; text-align:right; font-family:var(--bold); font-weight:700; font-size:8pt; padding-right:36pt; }
+  .trow-total .tv { width:100pt; text-align:right; padding-right:8pt; font-family:var(--bold); font-weight:700; font-size:7pt; }
+  .deliv { position:absolute; left:55pt; width:490pt; display:flex; }
+  .deliv .dl { width:94pt; font-family:var(--bold); font-weight:700; font-size:8pt; }
+  .deliv ul { list-style:none; }
+  .deliv li { font-size:8pt; line-height:11pt; margin-bottom:11pt; }
+  .deliv li::before { content:'• '; }
+  .note8 { font-size:8pt; line-height:11pt; }
+</style>
+</head>
+<body>
+
+<!-- ============ SEITE 1 ============ -->
+<div class="page">
+  <div class="logo"><img src="img_p1_8.jpeg" alt="tbwrks"></div>
+
+  <div class="abs addr" style="left:73.9pt; top:134pt;">
+    Jan Glaser<br>Milchstraße 23<br>85049 Ingolstadt
+  </div>
+  <div class="abs addr" style="left:397.3pt; top:134pt;">
+    Neubruchstraße 26a<br>86633 Neuburg a.d. Donau<br><br>
+    Tobias Bitterwolf<br>+49 160 636 7069<br><u>tobias@tbwrks.com</u>
+  </div>
+
+  <div class="abs" style="left:73.9pt; top:247pt;">
+    <div class="lbl6">Datum</div><div class="val9">2. Juli 2026</div>
+  </div>
+  <div class="abs" style="left:73.9pt; top:281pt;">
+    <div class="lbl6">Angebot</div><div class="val9">A-00097</div>
+  </div>
+
+  <div class="abs h-angebot" style="left:73.9pt; top:316pt;">ANGEBOT</div>
+
+  <div class="letter">
+    <p>Lieber Jan,</p>
+    <p>danke für dein Vertrauen und den offenen Austausch. Deine Ausgangslage ist klar: Die bestehende
+    Website stammt noch aus der Zeit deines Vaters. Sie sieht nicht mehr nach dem Unternehmen aus, das
+    du heute führst, funktioniert mobil nicht sauber und die Pflege ist eine Blackbox. Eine neue Website
+    auf einem veralteten Markenauftritt wirkt jedoch wie ein neues Schaufenster an einer alten Fassade.
+    Meine Empfehlung ist deshalb Stufe 2: erst das Fundament, dein eigenes Markendesign, dann die
+    Website darauf.</p>
+
+    <div class="tiers">
+      <div class="tier">
+        <div class="tt">Stufe 1 |&nbsp; Basis: Strategie + Website&nbsp; |&nbsp; 6.000 €/netto</div>
+        <div class="ts">Der saubere Neustart deines Webauftritts</div>
+      </div>
+      <div class="tier">
+        <div class="tt">Stufe 2 |&nbsp; Empfehlung: Design + Website + Kommunikation&nbsp; |&nbsp; 11.500 €/netto</div>
+        <div class="ts">+ Markendesign (Logo, Farbwelt, Typografie, Geschäftsausstattung), + Bilderpool, + Social-Media-Setup</div>
+      </div>
+      <div class="tier">
+        <div class="tt">Stufe 3 |&nbsp; Ausbau: Stufe 2 + laufende Betreuung&nbsp; |&nbsp; + 750 €/Monat</div>
+        <div class="ts">+ 4 Posts/Monat, Anzeigenvorlagen und Pflege deiner Social-Media-Kanäle für 12 Monate</div>
+      </div>
+      <div class="tier">
+        <div class="tt">inkl. Realisationsmanagement</div>
+        <div class="ts">Abstimmung, Korrekturen (2 Schleifen inklusive), Produktion und Zeitplan,<br>
+        exkl. Produktionsaufwände (z.B. Druckkosten, Domaingebühren etc.)</div>
+      </div>
+    </div>
+
+    <p>Du kannst sicher sein, dass ich dein Projekt engagiert, kompetent und termingerecht bearbeiten
+    werde. Der Projektstart ist ab KW 32 (Anfang August) möglich.</p>
+    <p>Dieses Angebot ist gültig bis 16.07.2026</p>
+    <p style="margin-bottom:2pt;">Mit freundlichen Grüßen</p>
+    <p><b style="font-size:8pt;">Tobias Bitterwolf</b></p>
+  </div>
+
+  <div class="abschlag">Zur Auftragsvergabe wird eine Abschlagssumme in Höhe von 30% des beauftragten Stufenbetrags fällig.</div>
+
+  <div class="footer">
+    <div class="c1"><span class="fb">tbwrks</span><br>Neubruchstraße 26a<br>86633 Neuburg</div>
+    <div class="c2">+49 1606367069<br>tobias@tbwrks.com<br><u>www.tbwrks.com</u></div>
+    <div class="c3">Umsatzsteuer ID: DE359565348<br>Solaris Bank AG<br>DE95 1101 0100 2123 9389 62</div>
+  </div>
+</div>
+
+<!-- ============ SEITE 2 | STUFE 1 ============ -->
+<div class="page">
+  <div class="m-title">Stufe 1 |&nbsp; Basis: Strategie + Website</div>
+  <div class="m-sub">Der saubere Neustart deines Webauftritts</div>
+
+  <div class="tablewrap">
+    <div class="thead"><div class="h1">Leistungsbaustein</div><div class="h2">Beschreibung</div><div class="h3">Zwischensumme (€)</div></div>
+    <div class="trow band">
+      <div class="c-name">1. Strategie</div>
+      <div class="c-desc">Positionierungs-Workshop und strategische Beratung: Wo steht das Unternehmen nach der Übernahme, wen sprichst du an, was unterscheidet dich. Das inhaltliche Fundament für Struktur und Texte der Website.</div>
+      <div class="c-sum">950,00&nbsp;€</div>
+    </div>
+    <div class="trow">
+      <div class="c-name">2. Website</div>
+      <div class="c-desc">Konzeption, Design und technische Umsetzung (Webflow): responsive Website mit max. 5 Unterseiten, Content-Integration, Testing, Go-Live und Übergabe inklusive Einweisung in die Pflege, damit du Inhalte künftig selbst ändern kannst.</div>
+      <div class="c-sum">4.400,00&nbsp;€</div>
+    </div>
+    <div class="trow band">
+      <div class="c-name">3. Realisation</div>
+      <div class="c-desc">Abstimmung, Korrekturen (2 Schleifen inklusive), Produktion, Zeitplan</div>
+      <div class="c-sum">650,00&nbsp;€</div>
+    </div>
+    <div class="trow-total"><div class="tl">Gesamt:</div><div class="tv">6.000,00&nbsp;€</div></div>
+    <div class="trow-total band" style="padding:14pt 0;"><div class="tl" style="text-align:left; padding-left:4pt;">Total (brutto)</div><div class="tv">7.140,00&nbsp;€</div></div>
+  </div>
+
+  <div class="deliv" style="top:430pt;">
+    <div class="dl">Deliverables</div>
+    <ul>
+      <li>Kompakte Positionierung als Dokument (Zielgruppen, Kernbotschaften, Seitenstruktur)</li>
+      <li>Responsive-Website mit max. 5 Unterseiten, live geschaltet, exkl. SEO/Analytics</li>
+      <li>Einweisung in die Content-Pflege (Texte/Bilder selbst änderbar)</li>
+      <li>Hosting/Pflege: 35,00 €/Monat netto, jährlich im Voraus</li>
+      <li>Realisationsmanagement</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="c1"><span class="fb">tbwrks</span><br>Neubruchstraße 26a<br>86633 Neuburg</div>
+    <div class="c2">+49 1606367069<br>tobias@tbwrks.com<br><u>www.tbwrks.com</u></div>
+    <div class="c3">Umsatzsteuer ID: DE359565348<br>Solaris Bank AG<br>DE95 1101 0100 2123 9389 62</div>
+  </div>
+</div>
+
+<!-- ============ SEITE 3 | STUFE 2 ============ -->
+<div class="page">
+  <div class="m-title">Stufe 2 |&nbsp; Empfehlung: Design + Website + Kommunikation</div>
+  <div class="m-sub">Dein Unternehmen, wie du es führst. Online und offline aus einem Guss</div>
+
+  <div class="tablewrap">
+    <div class="thead"><div class="h1">Leistungsbaustein</div><div class="h2">Beschreibung</div><div class="h3">Zwischensumme (€)</div></div>
+    <div class="trow band">
+      <div class="c-name">1. Strategie</div>
+      <div class="c-desc">Positionierungs-Workshop und strategische Beratung: Wo steht das Unternehmen nach der Übernahme, wen sprichst du an, was unterscheidet dich.</div>
+      <div class="c-sum">950,00&nbsp;€</div>
+    </div>
+    <div class="trow">
+      <div class="c-name">2. Branding</div>
+      <div class="c-desc">Neuentwicklung des visuellen Erscheinungsbildes: Logo, Typografie, Farbwelt + Anwendungsmoods für Off- und Online, Geschäftsausstattung (Briefpapier, Visitenkarten, Flyer). Zwei Designlinien zur Auswahl.</div>
+      <div class="c-sum">3.080,00&nbsp;€</div>
+    </div>
+    <div class="trow band">
+      <div class="c-name">3. Bilder</div>
+      <div class="c-desc">Konzeption und Erstellung markentypischer Bildinhalte (z.B. Fotografie, KI-generierte Visuals oder Illustrationen) als Bilderpool für Website, Social Media und Kommunikation.</div>
+      <div class="c-sum">975,00&nbsp;€</div>
+    </div>
+    <div class="trow">
+      <div class="c-name">4. Website</div>
+      <div class="c-desc">Konzeption, Design und technische Umsetzung (Webflow) auf Basis des neuen Designs: responsive, max. 5 Unterseiten, Content-Integration, Testing, Go-Live, Übergabe inklusive Pflege-Einweisung.</div>
+      <div class="c-sum">4.400,00&nbsp;€</div>
+    </div>
+    <div class="trow band">
+      <div class="c-name">5. Social-Media-Setup</div>
+      <div class="c-desc">Einrichtung/Überarbeitung der Profile im neuen Design, Post- und Story-Vorlagen, Bildsprache-Leitfaden, damit jeder künftige Post nach dir aussieht.</div>
+      <div class="c-sum">880,00&nbsp;€</div>
+    </div>
+    <div class="trow">
+      <div class="c-name">6. Realisation</div>
+      <div class="c-desc">Abstimmung, Korrekturen (2 Schleifen je Baustein inklusive), Produktion, Zeitplan</div>
+      <div class="c-sum">1.215,00&nbsp;€</div>
+    </div>
+    <div class="trow-total"><div class="tl">Gesamt:</div><div class="tv">11.500,00&nbsp;€</div></div>
+    <div class="trow-total band"><div class="tl" style="text-align:left; padding-left:4pt;">Total (brutto)</div><div class="tv">13.685,00&nbsp;€</div></div>
+  </div>
+
+  <div class="deliv" style="top:600pt;">
+    <div class="dl">Deliverables</div>
+    <ul>
+      <li>Zwei Designlinien zur Auswahl, final ausgearbeitete visuelle Linie inkl. Daten (z.B. Logo)</li>
+      <li>Geschäftsausstattung: Briefpapier, Visitenkarten, Flyer, druckfertig</li>
+      <li>Bilderpool für Leistungsdarstellung (Emotion/Wertigkeit)</li>
+      <li>Responsive-Website mit max. 5 Unterseiten, exkl. SEO/Analytics</li>
+      <li>Social-Media-Profile im neuen Design + Vorlagen-Set</li>
+      <li>Realisationsmanagement</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="c1"><span class="fb">tbwrks</span><br>Neubruchstraße 26a<br>86633 Neuburg</div>
+    <div class="c2">+49 1606367069<br>tobias@tbwrks.com<br><u>www.tbwrks.com</u></div>
+    <div class="c3">Umsatzsteuer ID: DE359565348<br>Solaris Bank AG<br>DE95 1101 0100 2123 9389 62</div>
+  </div>
+</div>
+
+<!-- ============ SEITE 4 | STUFE 3 ============ -->
+<div class="page">
+  <div class="m-title">Stufe 3 |&nbsp; Ausbau: Stufe 2 + laufende Betreuung</div>
+  <div class="m-sub">Content und Kanalpflege, ohne dass du dich kümmern musst</div>
+
+  <div class="tablewrap">
+    <div class="thead"><div class="h1">Leistungsbaustein</div><div class="h2">Beschreibung</div><div class="h3">Zwischensumme (€)</div></div>
+    <div class="trow band">
+      <div class="c-name">1. Projekt</div>
+      <div class="c-desc">Alle Leistungen aus Stufe 2 (Strategie, Branding, Bilder, Website, Social-Media-Setup, Realisation), einmalig.</div>
+      <div class="c-sum">11.500,00&nbsp;€</div>
+    </div>
+    <div class="trow">
+      <div class="c-name">2. Kommunikation</div>
+      <div class="c-desc">4 Posts/Monat (statisch/dynamisch) inklusive Konzept, Gestaltung und Text, Anzeigenvorlagen bei Bedarf, Pflege der Social-Media-Kanäle, monatliche Kurzabstimmung. Laufzeit 12 Monate ab Go-Live, monatliche Abrechnung, danach monatlich kündbar.</div>
+      <div class="c-sum">750,00&nbsp;€/Monat</div>
+    </div>
+    <div class="trow-total"><div class="tl">Gesamt:</div><div class="tv">11.500,00&nbsp;€ + 750,00&nbsp;€/Monat</div></div>
+    <div class="trow-total band"><div class="tl" style="text-align:left; padding-left:4pt;">Total (brutto)</div><div class="tv">13.685,00&nbsp;€ + 892,50&nbsp;€/Monat</div></div>
+  </div>
+
+  <div class="deliv" style="top:400pt;">
+    <div class="dl">Deliverables</div>
+    <ul>
+      <li>Alle Deliverables aus Stufe 2</li>
+      <li>48 Posts im Jahr, geplant und veröffentlicht, ohne Aufwand für dich</li>
+      <li>Anzeigenvorlagen für Print/Digital bei Bedarf</li>
+      <li>Monatliche Kurzabstimmung (Themen, Anlässe, Aktionen)</li>
+      <li>Einzelposts außerhalb des Pakets: 150,00 € netto</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <div class="c1"><span class="fb">tbwrks</span><br>Neubruchstraße 26a<br>86633 Neuburg</div>
+    <div class="c2">+49 1606367069<br>tobias@tbwrks.com<br><u>www.tbwrks.com</u></div>
+    <div class="c3">Umsatzsteuer ID: DE359565348<br>Solaris Bank AG<br>DE95 1101 0100 2123 9389 62</div>
+  </div>
+</div>
+
+<!-- ============ SEITE 5 | ZEITPLAN + KONDITIONEN ============ -->
+<div class="page">
+  <div class="m-title">Zeitplan + Konditionen</div>
+  <div class="m-sub">Fertigstellung: Stufe 1 in 4 bis 5 Wochen, Stufe 2/3 in 6 bis 8 Wochen nach Auftragsvergabe</div>
+
+  <div class="tablewrap">
+    <div class="thead"><div class="h1">Leistungsbaustein</div><div class="h2">Zeitplan</div><div class="h3">Prio</div></div>
+    <div class="trow band" style="padding:10pt 0 8pt 0;">
+      <div class="c-name">1. Strategie</div>
+      <div class="c-desc">1 Woche nach Auftragsvergabe, frühestens KW 32</div>
+      <div class="c-sum">1</div>
+    </div>
+    <div class="trow" style="padding:10pt 0 8pt 0;">
+      <div class="c-name">2. Branding</div>
+      <div class="c-desc">3 Wochen nach Auftragsvergabe (Stufe 2/3)</div>
+      <div class="c-sum">2</div>
+    </div>
+    <div class="trow band" style="padding:10pt 0 8pt 0;">
+      <div class="c-name">3. Bilder</div>
+      <div class="c-desc">4 Wochen nach Auftragsvergabe (Stufe 2/3)</div>
+      <div class="c-sum">4</div>
+    </div>
+    <div class="trow" style="padding:10pt 0 8pt 0;">
+      <div class="c-name">4. Website</div>
+      <div class="c-desc">6 bis 7 Wochen nach Auftragsvergabe</div>
+      <div class="c-sum">3</div>
+    </div>
+    <div class="trow band" style="padding:10pt 0 8pt 0;">
+      <div class="c-name">5. Social-Media</div>
+      <div class="c-desc">Setup mit Website-Go-Live (Stufe 2/3)</div>
+      <div class="c-sum">5</div>
+    </div>
+  </div>
+
+  <div class="abs" style="left:55pt; top:340pt; width:490pt;">
+    <div style="font-family:var(--bold); font-weight:700; font-size:8pt; margin-bottom:12pt;">Konditionen</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Zahlung:</b> 30% bei Auftrag / 40% bei Zwischenabnahme (Design-Freigabe) / 30% bei Übergabe. Zahlungsziel 7 Tage nach Rechnungsstellung.</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Hosting/Pflege:</b> 35,00 €/Monat netto, jährlich im Voraus (420,00 €/Jahr). Voraussetzung für den Betrieb der Website, in allen Stufen.</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Korrekturen:</b> 2 Korrekturschleifen je Baustein inklusive; weitere Aufwände 110,00 €/h nach vorheriger Abstimmung.</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Nutzungsrechte:</b> einfache, zeitlich und räumlich unbeschränkte Nutzungsrechte inklusive. Offene Daten und Weitergabe an Dritte gegen gesonderte Vergütung.</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Nicht enthalten:</b> Produktionsaufwände (Druck, Domains, Lizenzen, Stockmaterial), Login-/Datenbank-Integrationen, SEO/Analytics (optional anbietbar), Leistungen Dritter.</div>
+    <div class="note8" style="margin-bottom:9pt;"><b>Mehraufwand</b> außerhalb des beschriebenen Umfangs: 110,00 €/h.</div>
+    <div class="note8"><b>Gültigkeit:</b> Dieses Angebot ist gültig bis 16.07.2026.</div>
+  </div>
+
+  <div class="footer">
+    <div class="c1"><span class="fb">tbwrks</span><br>Neubruchstraße 26a<br>86633 Neuburg</div>
+    <div class="c2">+49 1606367069<br>tobias@tbwrks.com<br><u>www.tbwrks.com</u></div>
+    <div class="c3">Umsatzsteuer ID: DE359565348<br>Solaris Bank AG<br>DE95 1101 0100 2123 9389 62</div>
+  </div>
+</div>
+
+</body>
+</html>
