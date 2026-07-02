@@ -15,9 +15,20 @@ einem Dokument ist als **Kandidat** markiert, nicht als gesichertes Prinzip.
 
 ## Status
 
-- Dokumente empfangen: **1**
+- Dokumente empfangen: **1** (Werk-Evidenz)
+- Selbstauskunfts-Dateien eingebunden: **5** (Ordner `kontext/`)
 - Geschätzter Umfang laut Auftrag: ~1.500 Seiten
 - Aktuelle Phase: **1 — Aufnahme läuft (Kanal verifiziert)**
+
+## Zwei Quell-Ebenen (strikt getrennt)
+
+1. **Werk-Evidenz** — `dokumente/`: was Tobias *nachweislich* tut. Primärbasis des Systems.
+2. **Selbstauskunft** — `kontext/`: was Tobias *sagt* (Interview 01.07.2026). Dient
+   zum Steuern und Gegenprüfen, ersetzt aber **nie** fehlende Werk-Belege.
+   Regel: Deckung beider Ebenen = gesichertes Prinzip; Abweichung = dokumentierter Befund.
+
+**Offen:** Eine gestern erstellte „Skill-MD" ist in keinem Branch auffindbar —
+Speicherort noch zu klären, dann nachziehen.
 
 ## Dokument-Register
 
@@ -85,6 +96,19 @@ Kapitelfolge: **01_Strategie → 02_Visualität → 03_Packaging → Fortentwick
 - **[K12] Designsignatur:** Kraftpapier/Naturmaterial, natürliche Farben +
   ein kräftiger Akzentton (Orange), Illustration statt Foto im Kern, Flieder als
   Präsentations-Akzentfarbe. Beleg: Dok 01, S. 1/7/11/14.
+
+## Deckungs-Abgleich Werk ↔ Selbstauskunft (laufend)
+
+- **[D1] Reihenfolge Kernlogik → Claim → Oberfläche bestätigt.**
+  Selbstauskunft: „Markenarbeit folgt der Reihenfolge: erst Kernlogik (Golden Why),
+  dann Claim, dann Oberfläche/Gestaltung" (kontext/arbeitsweise-mit-claude.md).
+  Werk-Evidenz: Dok 01 folgt exakt Warum/Wie/Was (S.3) → Claim-Optionen (S.3) →
+  Visualität (S.6–9) → Packaging (S.11–12). → **Deckung, Prinzip gestützt.**
+- **[D2] „Golden Why" als durchgängiges Werkzeug** (kontext/unternehmen-tbwrks.md)
+  ↔ Warum/Wie/Was im Werk (Dok 01, S.3). Erste Werk-Bestätigung.
+- **[D3] „Kein Kommunikationslärm / erst das Richtige sagen, dann gestalten"**
+  (Positionierung, kontext/unternehmen-tbwrks.md) ↔ „nicht in Schönheit sterben,
+  sondern für Erfolg sorgen … nur über Klarheit" (Dok 01, S.3). → Deckung.
 
 ## Offene Lücken / Widersprüche
 
