@@ -16,7 +16,8 @@ Feste Reihenfolge für jedes Angebot. Platzhalter in {geschweiften Klammern} kom
 
 > **Stufe 1 | Basis — {Name}** — {was der Kunde angefragt hat} — **{X.XXX € netto}**
 > **Stufe 2 | Empfehlung — {Name}** — {dein Setup, Nutzenversprechen} — **{X.XXX € netto}**
-> **Stufe 3 | Ausbau — {Name}** — Stufe 2 + laufende Betreuung — **{X.XXX € netto} + {XXX €/Monat, Y Monate}** *(falls STUFEN=3)*
+> **Stufe 3 | Ausbau — {Name}** — Stufe 2 + laufende Betreuung — **{X.XXX € netto} + {XXX €/Monat, Y Monate}** *(falls STUFEN=3, Variante A)*
+> **Stufe 3 | Begleitung + KI** — Stufe 2 + KI-Workflows im Unternehmen + monatliche Führung — **{X.XXX € netto} + {X.XXX € Setup} + {XXX €/Monat}** *(falls STUFEN=3, Variante B)*
 >
 > *Der Mehrwert je Stufe steht als eine konkrete Zeile darunter (z. B. „+ Strategie, + Bilderpool, + 5-seitige Website statt Onepager").*
 
@@ -50,6 +51,9 @@ Feste Reihenfolge für jedes Angebot. Platzhalter in {geschweiften Klammern} kom
 **Deliverables**
 - {konkrete, zählbare Ergebnisse: „Zwei Designlinien zur Auswahl", „Responsive Website mit max. 5 Unterseiten", …}
 - {Mengen und Grenzen IMMER beziffern: max. X Unterseiten, X Posts/Monat, X Korrekturschleifen}
+
+*Bei Modulen mit Bild-/Content-Positionen als Fußnote unter den Deliverables (Standard, beantwortet die KI-Frage bevor der Kunde sie stellt):*
+> KI-gestützt, von Hand geführt: Wir nutzen KI, wo sie schneller macht — Auswahl, Qualität und Verantwortung bleiben Handarbeit.
 
 ---
 

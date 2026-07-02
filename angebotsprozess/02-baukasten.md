@@ -96,6 +96,9 @@ Für Mittelstandskunden, die „irgendwas mit KI" wollen, aber nicht wissen wie.
 
 Positionierung nach außen: **„KI-gestützt, von Hand geführt"** — KI ist Werkzeug im tbwrks-Prozess (steht bereits in den Angeboten: „KI-generierte Visuals"), Kuratierung, Geschmack und Verantwortung bleiben beim Creative Director. Die eigene KI-Effizienz ist **kein Rabattgrund**: verkauft wird das Ergebnis zum Paketpreis, nicht die Stunde (genau dafür wurden Tagessätze aus den Angeboten entfernt).
 
+**Kombination als Stufe 3, Variante B „Begleitung + KI"** (Alternative zum klassischen M5-Ausbau):
+M10-M-Setup (2.800 € einmalig) + kombinierter Retainer **600 €/Monat** (12 Monate, danach monatlich kündbar) mit: monatlicher Qualitätsschleife/Kuratierung der vom Kundenteam erstellten Inhalte, Pflege und Weiterentwicklung der Workflows, Sparring zu Content und Kommunikation. Der Kunde produziert selbst, tbwrks führt — günstiger pro Monat als Full-Service (M5-M 750 €), dafür Setup-Erlös und ein unabhängigkeitsfähiger Kunde (Markenversprechen: „eine Marke, auf der du auch unabhängig von uns Erfolg hast").
+
 ## 3. Standardkonditionen (stehen in JEDEM Angebot)
 
 - **Zahlung:** ab 5.000 €: 30 % bei Auftrag / 40 % bei Zwischenabnahme / 30 % bei Übergabe. Unter 5.000 €: 50 % bei Auftrag / 50 % bei Übergabe. Zahlungsziel 7 Tage.

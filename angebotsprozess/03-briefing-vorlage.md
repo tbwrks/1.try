@@ -30,6 +30,15 @@ Jedes Angebot geht mit 2 oder 3 Stufen raus. Die Stufen sind keine drei getrennt
 | 2 | **Empfehlung** | Dein Setup — das, was es aus deiner Sicht wirklich braucht | Zielpaket, ca. Faktor 1,3–1,6 zur Basis. Das Anschreiben argumentiert für diese Stufe |
 | 3 | **Ausbau** | Empfehlung + laufende Betreuung (M5-Retainer und/oder M8) | Einmalpreis der Empfehlung + €/Monat. Wirkt als Anker und macht Stufe 2 „vernünftig" |
 
+Für Stufe 3 gibt es **zwei Varianten** — im Briefing unter RETAINER wählen:
+
+| Variante | Name im Angebot | Modell | Preis-Logik |
+|---|---|---|---|
+| A | **Ausbau** | tbwrks macht: Posts, Kampagnen, Kanalpflege (M5) | Stufe 2 + 350–1.500 €/Monat |
+| B | **Begleitung + KI** | tbwrks befähigt: KI-Workflows in der Marken-DNA des Kunden (M10-M), das Team des Kunden produziert selbst, tbwrks kuratiert monatlich, pflegt die Workflows und bleibt Sparringspartner | Stufe 2 + 2.800 € einmalig + 600 €/Monat |
+
+Variante B passt, wenn der Kunde eigenes Personal für Content hat oder unabhängiger werden will („Marke, auf der du auch unabhängig von uns Erfolg hast"). Variante A, wenn er es komplett abgeben will. Beide nie mischen — eine Stufe 3 pro Angebot.
+
 Regeln:
 - Der **Unterschied zwischen den Stufen muss in einer Zeile benennbar sein** (konkrete Deliverables: „+ Bildproduktion erweitert, + 24 Posts/Jahr als Retainer"), sonst wirkt die höhere Stufe wie Aufschlag ohne Gegenwert.
 - Laufende Leistungen (Posts, Hosting, Betreuung) tauchen **nur in Stufe 3 und nur als €/Monat** auf — nie im Einmalpreis versteckt.
