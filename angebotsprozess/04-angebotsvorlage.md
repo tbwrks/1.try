@@ -12,11 +12,13 @@ Feste Reihenfolge für jedes Angebot. Platzhalter in {geschweiften Klammern} kom
 >
 > {2–4 Sätze aus ANLASS: Ausgangslage → Ziel → Leitidee. Ton wie im Ferber-Anschreiben: konkret, bildhaft, ergebnisorientiert.}
 
-**Paketübersicht** (je Zeile: Name + Einzeiler + Preis):
+**Stufenübersicht** (2–3 Stufen, je Zeile: Name + Einzeiler + Preis; das Anschreiben argumentiert für die Empfehlung):
 
-> **Modul 1 | {Name}** — {Nutzenversprechen} — **{X.XXX € netto}**
-> **Modul 2 | {Name}** — {Nutzenversprechen} — **{X.XXX € netto}** *(falls Option)*
-> **Betreuung | {Name}** — {Nutzen} — **{XXX €/Monat, Y Monate}** *(falls Retainer)*
+> **Stufe 1 | Basis — {Name}** — {was der Kunde angefragt hat} — **{X.XXX € netto}**
+> **Stufe 2 | Empfehlung — {Name}** — {dein Setup, Nutzenversprechen} — **{X.XXX € netto}**
+> **Stufe 3 | Ausbau — {Name}** — Stufe 2 + laufende Betreuung — **{X.XXX € netto} + {XXX €/Monat, Y Monate}** *(falls STUFEN=3)*
+>
+> *Der Mehrwert je Stufe steht als eine konkrete Zeile darunter (z. B. „+ Strategie, + Bilderpool, + 5-seitige Website statt Onepager").*
 
 > inkl. Realisationsmanagement (Wert: {XXX €})
 > exkl. Produktionsaufwände (Druckkosten, Domain-/Lizenzgebühren, Stockmaterial etc.)
