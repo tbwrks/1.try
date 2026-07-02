@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>FERBER — Creative Consulting | tbwrks</title>
+<style>
+  @page { size: 297mm 210mm; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --flieder: #b9addb;
+    --flieder-text: #a89bd4;
+    --flieder-light: #cfc5e8;
+    --ink: #3a3a3c;
+    --ink-soft: #6b6b70;
+    --paper: #ffffff;
+    --warm: #efe9e2;
+  }
+  body { font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif; color: var(--ink); }
+  .slide {
+    width: 297mm; height: 210mm; position: relative; overflow: hidden;
+    background: var(--paper); page-break-after: always;
+  }
+  /* Kopfzeile */
+  .head { position: absolute; top: 10mm; right: 14mm; font-size: 3mm; color:#c9c9ce; font-weight:700; }
+  .head b { color:#d6d2e2; font-weight:800; letter-spacing: -.2mm; }
+  .head span { color:#8b8b90; font-weight:400; margin-left: 2.5mm; font-size:2.6mm; }
+  /* Rubrik links/rechts oben: „Wort Wort2" */
+  .rubrik { position:absolute; top: 26mm; right: 110mm; text-align: right; font-style: italic; font-weight: 800; font-size: 5.2mm; }
+  .rubrik i { color: var(--flieder-text); font-weight: 800; }
+  .rubrik-copy { position:absolute; top: 26mm; right: 14mm; width: 88mm; font-size: 3.1mm; line-height: 1.55; color: var(--ink-soft); }
+  /* Statement-Folien */
+  .statement { display:flex; align-items:center; justify-content:center; height:100%; padding: 0 30mm; }
+  .statement h1 { font-style: italic; font-weight: 700; font-size: 13mm; line-height: 1.35; text-align: center; letter-spacing: -.3mm; }
+  .statement h1 small { display:block; font-size: 4mm; font-weight: 400; font-style: normal; color: var(--ink-soft); margin-top: 8mm; letter-spacing: 0; }
+  /* Trenner */
+  .trenner { background: var(--flieder); color: #fff; height: 100%; padding: 60mm 0 0 56mm; }
+  .trenner .cc { font-style: italic; font-size: 15mm; font-weight: 700; line-height: 1.02; letter-spacing:-.5mm; }
+  .trenner .cc b { color: var(--ink); font-weight: 800; }
+  .trenner .proj { font-style: italic; font-size: 7.5mm; font-weight: 600; margin-top: 7mm; }
+  .trenner ul { list-style:none; margin-top: 16mm; margin-left: 24mm; }
+  .trenner li { font-style: italic; font-size: 6.2mm; font-weight: 600; margin-bottom: 4.5mm; color: #ffffffcc; }
+  .trenner li.act { color: #fff; }
+  .trenner li b { font-weight: 700; }
+  .foot-c { position: absolute; bottom: 8mm; left: 14mm; right: 90mm; font-size: 2.4mm; line-height: 1.5; color: #ffffffaa; }
+  .foot-c.dark { color: #b5b5ba; }
+  /* Inhaltsfolien */
+  .content { padding: 30mm 14mm 16mm 20mm; }
+  .cap { color: var(--flieder-text); font-size: 3.2mm; font-weight: 700; margin-bottom: 2mm; }
+  .cap::before { content:"* "; }
+  /* Formel */
+  .formel { display:flex; align-items:center; justify-content:center; gap: 8mm; height:100%; padding: 0 20mm; }
+  .formel .t { font-style: italic; font-weight: 800; font-size: 9.5mm; }
+  .formel .op { font-size: 12mm; color: var(--flieder-text); font-weight: 300; }
+  /* Tabellen/Raster */
+  .grid3 { display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm; margin-top: 10mm; }
+  .col h3 { font-style: italic; font-size: 5.4mm; color: var(--flieder-text); margin-bottom: 3.5mm; }
+  .col h4 { font-size: 3.6mm; margin-bottom: 2mm; }
+  .col p, .col li { font-size: 3.2mm; line-height: 1.55; color: var(--ink-soft); }
+  .col ul { margin-left: 4mm; }
+  /* Bild-Platzhalter */
+  .ph { background: var(--warm); border-radius: 1.5mm; display:flex; align-items:center; justify-content:center;
+        color:#b7ab9c; font-size:3mm; font-style: italic; }
+  /* Optionen */
+  .opt { border-top: .4mm solid #e8e4f2; padding: 5mm 0; display:grid; grid-template-columns: 62mm 1fr 1fr; gap: 8mm; }
+  .opt .name { font-style: italic; font-weight: 700; font-size: 5.6mm; color: var(--flieder-text); }
+  .opt .name small{ display:block; font-style:normal; font-weight:400; font-size:2.9mm; color:var(--ink-soft); margin-top:1.5mm;}
+  .opt p { font-size: 3.2mm; line-height: 1.5; color: var(--ink-soft); }
+  .opt .lab { font-size: 2.8mm; font-weight: 700; color: var(--ink); display:block; margin-bottom: 1mm;}
+  .empf { background:#f4f1fa; border-radius:1.5mm; padding: 4mm 5mm; }
+  /* Gegenüberstellung */
+  .vs { display:grid; grid-template-columns: 1fr 1fr; height:100%; }
+  .vs > div { display:flex; flex-direction:column; justify-content:center; padding: 0 22mm; }
+  .vs .l { background: #f5f4f7; color:#9a97a3; }
+  .vs h2 { font-style: italic; font-weight: 700; font-size: 8.2mm; line-height: 1.4; }
+  .vs .r h2 { color: var(--ink); }
+  .vs small { font-size: 3.4mm; margin-top: 6mm; font-weight: 600; letter-spacing:.5mm; text-transform: uppercase;}
+  /* Wirkung/Codierung */
+  .wc h1 { font-style: italic; font-weight: 800; font-size: 12mm; margin-bottom: 12mm; }
+  .wc .pair { margin-bottom: 8mm; width: 118mm; }
+  .wc .pair h5 { color: var(--flieder-text); font-style: italic; font-size: 4.6mm; margin-bottom: 2mm; }
+  .wc .pair p { font-size: 3.4mm; line-height: 1.6; color: var(--ink-soft); }
+  .wc .img { position:absolute; right: 14mm; top: 30mm; bottom: 16mm; width: 128mm; }
+  /* Funnel */
+  .funnel { display:grid; grid-template-columns: repeat(5,1fr); gap: 5mm; margin-top: 12mm; }
+  .funnel .step { background:#f6f4fa; border-radius:2mm; padding: 6mm 5mm; min-height: 92mm; position:relative;}
+  .funnel .step:nth-child(odd){ background:#f1eef8; }
+  .funnel h4 { font-style:italic; color:var(--flieder-text); font-size:4.6mm; margin-bottom:3mm;}
+  .funnel h4 span { display:block; font-size:2.8mm; color:#b9b4c6; font-style:normal; font-weight:600; }
+  .funnel li { font-size: 3mm; line-height:1.5; color: var(--ink-soft); margin-bottom:2mm; list-style:none;}
+  /* Decodierung */
+  .deco-row { display:grid; grid-template-columns: 96mm 10mm 1fr; align-items:baseline; padding: 6mm 0; border-top:.4mm solid #eee9f5;}
+  .deco-row .f { font-size:3.6mm; line-height:1.55; color:var(--ink-soft); }
+  .deco-row .arrow { color:var(--flieder-text); font-size:5mm; }
+  .deco-row .w { font-style:italic; font-weight:800; font-size:6.4mm; color:var(--ink); }
+  .dna { margin-top:10mm; }
+  .dna b { font-style: italic; font-size: 7mm; color: var(--flieder-text); margin-right: 6mm; }
+  /* Schnellschüsse */
+  .nums { margin-top: 8mm; }
+  .num { display:grid; grid-template-columns: 16mm 70mm 1fr; gap: 6mm; padding: 4.6mm 0; border-top:.4mm solid #eee9f5; align-items:baseline;}
+  .num .n { font-style:italic; font-weight:800; font-size:7mm; color:var(--flieder-light); }
+  .num h4 { font-size: 4mm; font-style: italic; }
+  .num p { font-size: 3.2mm; color: var(--ink-soft); line-height:1.5; }
+  /* Cover */
+  .cover { display:grid; grid-template-columns: 1fr 1fr; height:100%; }
+  .cover .left { background: var(--flieder); padding: 52mm 0 0 30mm; color:#fff; position:relative; }
+  .cover .right { position:relative; }
+  .cover .cc { font-style:italic; font-weight:700; font-size:14mm; line-height:1.02; letter-spacing:-.5mm;}
+  .cover .cc b { color: var(--ink); font-weight: 800; }
+  .cover .proj { font-style: italic; font-weight:600; font-size:7mm; margin-top:7mm; }
+  .cover ul { list-style:none; margin: 15mm 0 0 20mm; }
+  .cover li { font-style:italic; font-weight:600; font-size:5.4mm; margin-bottom:4mm; color:#fffffff2;}
+  .brief { position:absolute; top: 30mm; right: 16mmm; }
+</style>
+</head>
+<body>
+
+<!-- 01 · COVER -->
+<div class="slide">
+  <div class="cover">
+    <div class="left">
+      <div class="cc">Creative<br><b>Consulting</b></div>
+      <div class="proj">FERBER — Gästegewinnung</div>
+      <ul>
+        <li>01_Schnellschüsse</li>
+        <li>02_Strategie</li>
+        <li>03_Visualität</li>
+        <li>04_System &amp; Funnel</li>
+      </ul>
+      <div class="foot-c">Die Inhalte dieser Präsentation unterliegen meinem Urheberrecht (tbwrks). Jegliche Verwendung, Vervielfältigung, Verbreitung oder Weitergabe der in dieser Präsentation enthaltenen Informationen ist ohne meine ausdrückliche schriftliche Genehmigung untersagt. Diese Einschränkung gilt bis zur vollständigen Bezahlung der vereinbarten Vergütung für die Nutzung der Inhalte.</div>
+    </div>
+    <div class="right">
+      <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+      <div style="position:absolute; top:26mm; left:18mm; right:16mm;">
+        <div class="rubrik" style="position:static; text-align:left; margin-bottom:4mm;">Brie<i>fing</i></div>
+        <p style="font-size:3.2mm; line-height:1.6; color:var(--ink-soft); width:120mm;">
+          Ein Haus, fünf Betriebe: Restaurant, Eventstadl, Metzgerei, Waldschänke, Hotel.
+          Nach Umbau und Übergabe-Belastung wirkt der Auftritt unverständlich, unwertig,
+          unklar — die Stammkundschaft ist verunsichert. Aufgabe: kein Abarbeiten von
+          Media-Assets, sondern ein Gästegewinnungssystem — Branding klarziehen, auf
+          Erfolg ausrichten, kommunikativ neu aufsetzen.</p>
+        <div class="ph" style="width:120mm; height:96mm; margin-top:10mm;">[ Bild: Haus / Gastraum — folgt ]</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 · FORMEL -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="formel">
+    <div class="t">Klares Ziel</div><div class="op">+</div>
+    <div class="t">Tiefes Verständnis</div><div class="op">=</div>
+    <div class="t" style="color:var(--flieder-text);">Strategische Gestaltung</div>
+  </div>
+</div>
+
+<!-- 03 · THESE -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="statement">
+    <h1>Umsatz ist kein Ziel,<br>sondern ein Resultat.
+      <small>Er entsteht, wenn Menschen verstehen, was sie bei euch erwartet — und es wollen.
+      Genau dieses Verstehen ist im Moment gestört.</small></h1>
+  </div>
+</div>
+
+<!-- 04 · TRENNER SCHNELLSCHÜSSE -->
+<div class="slide"><div class="trenner">
+  <div class="cc">Creative<br><b>Consulting</b></div>
+  <div class="proj">FERBER — Gästegewinnung</div>
+  <ul>
+    <li class="act"><b>01_Schnellschüsse</b></li>
+    <li>02_Strategie</li><li>03_Visualität</li><li>04_System &amp; Funnel</li>
+  </ul>
+</div></div>
+
+<!-- 05 · SCHNELLSCHÜSSE -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Schnell<i>schüsse</i></div>
+  <div class="rubrik-copy">Fünf Maßnahmen, die sofort wirken — bevor das große System steht.
+    Sichtbarer Fortschritt für euch und für die Gäste, ohne dass es Betreiber-Zeit frisst.</div>
+  <div class="content" style="padding-top:44mm;">
+    <div class="nums">
+      <div class="num"><div class="n">01</div><h4>Google-Profil klarziehen</h4><p>Fotos, Öffnungszeiten, Kategorien, Preise — der erste Kontaktpunkt muss stimmen und mit allem übereinstimmen.</p></div>
+      <div class="num"><div class="n">02</div><h4>Die Umbau-Story erzählen</h4><p>Ein Aushang, ein Post: „Warum wir umgebaut haben." Aus der gefühlten Verteuerung wird eine erzählte Investition.</p></div>
+      <div class="num"><div class="n">03</div><h4>Stammgast-Geste</h4><p>Wiedersehens-Abend oder persönliche Karte — die verunsicherte Stammkundschaft wird aktiv zurückgeholt, nicht beworben.</p></div>
+      <div class="num"><div class="n">04</div><h4>Speisekarte entrümpeln</h4><p>Sprachlich klar, wertig, verständlich — die Karte ist der meistgelesene Text des Hauses.</p></div>
+      <div class="num"><div class="n">05</div><h4>Minimaler Social-Rhythmus</h4><p>2× pro Woche „Wir zeigen, was wir machen" — batch-produziert, ohne tägliche Betreuung.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 · TRENNER STRATEGIE -->
+<div class="slide"><div class="trenner">
+  <div class="cc">Creative<br><b>Consulting</b></div>
+  <div class="proj">FERBER — Gästegewinnung</div>
+  <ul>
+    <li>01_Schnellschüsse</li>
+    <li class="act"><b>02_Strategie</b></li>
+    <li>03_Visualität</li><li>04_System &amp; Funnel</li>
+  </ul>
+</div></div>
+
+<!-- 07 · DECODIERUNG -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Deco<i>dierung</i></div>
+  <div class="rubrik-copy">Was steckt wirklich in diesem Haus? Wir übersetzen den Ist-Zustand
+    in die Begriffe, auf denen alles Weitere steht.</div>
+  <div class="content" style="padding-top:48mm;">
+    <div class="deco-row"><div class="f">Eigene Metzgerei, eigene Küche — echte Wertschöpfung, die kein austauschbarer Gasthof hat.</div><div class="arrow">→</div><div class="w">Handwerk</div></div>
+    <div class="deco-row"><div class="f">Restaurant, Eventstadl, Waldschänke, Hotel, Catering — alles unter einem Dach, aus einer Familie.</div><div class="arrow">→</div><div class="w">Gastlichkeit</div></div>
+    <div class="deco-row"><div class="f">Feiern, Übernachten, Zusammenkommen — Momente, an die man sich erinnert.</div><div class="arrow">→</div><div class="w">Gute Zeiten</div></div>
+    <div class="dna"><span class="cap">Die DNA</span><br><b>Handwerk</b><b>Gastlichkeit</b><b>Gute Zeiten</b></div>
+  </div>
+</div>
+
+<!-- 08 · GOLDEN WHY -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Golden <i>Why</i></div>
+  <div class="content" style="padding-top:48mm;">
+    <div class="grid3">
+      <div class="col"><h3>WHY</h3><h4>Warum gibt es das?</h4>
+        <p>Weil gute Zeiten einen Ort brauchen, an dem alles echt ist — vom Fleisch bis zum Fest.</p></div>
+      <div class="col"><h3>HOW</h3><h4>Wie erreicht es das?</h4>
+        <p>Ein Haus, eine Familie, eigene Wertschöpfung: Metzgerei, Küche, Gastgeberschaft — seit Generationen.</p></div>
+      <div class="col"><h3>WHAT</h3><h4>Was machen wir dafür?</h4>
+        <ul><li>Branding klarziehen</li><li>Kommunikation neu aufsetzen</li><li>Gästegewinnungssystem installieren</li><li>Social-Media-Formate</li></ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- 09 · KERN / LEITIDEE -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="statement">
+    <h1>„Ein Haus für Genuss<br>und gute Zeiten."
+    <small>Die Leitidee. Sie trägt alle fünf Betriebe — und sie spricht die Warum-Ebene,
+      nicht die Was-Ebene.</small></h1>
+  </div>
+</div>
+
+<!-- 10 · GEGENÜBERSTELLUNG -->
+<div class="slide">
+  <div class="head" style="z-index:2;"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="vs">
+    <div class="l"><h2>„Wollen wir schnell ein paar Posts,<br>damit wieder was<br>los wirkt?"</h2><small>Der naheliegende Weg</small></div>
+    <div class="r"><h2>„Wir wollen, dass das Haus wieder verstanden wird — ein System, das Gäste gewinnt."</h2><small style="color:var(--flieder-text);">Der richtige Weg</small></div>
+  </div>
+</div>
+
+<!-- 11 · IMAGE-REFRAME -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="statement">
+    <h1>„Wir haben nicht renoviert,<br>um teurer zu werden.<br>Wir haben renoviert, damit gute Zeiten<br>ein besseres Zuhause haben."
+    <small>Der Umbau ist keine Verteuerung — er ist eine bislang unerzählte Investition. Diese Geschichte wird jetzt erzählt.</small></h1>
+  </div>
+</div>
+
+<!-- 12 · CLAIM-OPTIONEN -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Claim<i>optionen</i></div>
+  <div class="rubrik-copy">Drei Wege, die Leitidee zu verdichten — mit offenem Für und Wider.
+    Die Wahl bestimmt den Ton des ganzen Auftritts.</div>
+  <div class="content" style="padding-top:46mm;">
+    <div class="opt"><div class="name">„Gut essen. Gut feiern. Gut sein."<small>die bestehende Fassung</small></div>
+      <p><span class="lab">Dafür</span>Rhythmisch, eingeführt; „gut sein" ist doppelbödig — moralisch und wohlig.</p>
+      <p><span class="lab">Dagegen</span>„Essen" bleibt im Alltag; „sein" trägt das Hotel nur indirekt.</p></div>
+    <div class="opt"><div class="name">„Gut speisen. Gut feiern. Gut leben."<small>die wertige Fassung</small></div>
+      <p><span class="lab">Dafür</span>„Speisen" hebt die Wertigkeit, „leben" öffnet auf Hotel und Alltag.</p>
+      <p><span class="lab">Dagegen</span>„Speisen" kann gestelzt wirken — und bestätigt ausgerechnet den „z'teuer geworden"-Einwand der verunsicherten Stammkundschaft.</p></div>
+    <div class="opt empf"><div class="name">„Gut essen. Gut feiern. Gut leben."<small>Empfehlung — die Synthese</small></div>
+      <p><span class="lab">Dafür</span>„Essen" bleibt nahbar (Metzgerei, Stammtisch), „leben" hebt und trägt das ganze Haus inklusive Hotel.</p>
+      <p><span class="lab">Regel</span>Einmal entscheiden — dann überall wortgleich: Website, Social, Print, Haus.</p></div>
+  </div>
+</div>
+
+<!-- 13 · TRENNER VISUALITÄT -->
+<div class="slide"><div class="trenner">
+  <div class="cc">Creative<br><b>Consulting</b></div>
+  <div class="proj">FERBER — Gästegewinnung</div>
+  <ul>
+    <li>01_Schnellschüsse</li><li>02_Strategie</li>
+    <li class="act"><b>03_Visualität</b></li><li>04_System &amp; Funnel</li>
+  </ul>
+</div></div>
+
+<!-- 14 · RICHTUNG 1 -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Basis aus <i>Handwerk</i></div>
+  <div class="rubrik-copy">Richtung 01 — holt die Stammkundschaft zurück. Das Haus zeigt,
+    was es kann: Herkunft, Hände, Feuer, Produkt. Echt statt inszeniert.</div>
+  <div class="content" style="padding-top:46mm;">
+    <div class="cap">Decodierung der Basis</div>
+    <div style="font-style:italic; font-weight:700; font-size:6.4mm; color:var(--flieder-text); margin-bottom:8mm;">
+      Herkunft &nbsp;·&nbsp; Echtheit &nbsp;·&nbsp; Können &nbsp;·&nbsp; Bodenständigkeit</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6mm;">
+      <div class="ph" style="height:74mm;">[ Moodboard: Metzgerhandwerk, dokumentarisch ]</div>
+      <div class="ph" style="height:74mm;">[ Moodboard: offenes Feuer, Küche ]</div>
+      <div class="ph" style="height:74mm;">[ Moodboard: Gastraum, warme Erdtöne ]</div>
+    </div>
+    <p style="margin-top:6mm; font-size:3.2mm; color:var(--ink-soft); width:160mm; line-height:1.55;">
+      Wirkung: echt, bodenständig, „wieder unseres". Diese Richtung repräsentiert Nähe und
+      Herkunft — sie übersetzt „Handwerk" in warme Farben, dokumentarische Fotografie und
+      eine Sprache ohne Gastro-Sprech.</p>
+  </div>
+</div>
+
+<!-- 15 · RICHTUNG 1 WIRKUNG/CODIERUNG -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="content wc" style="padding-top:30mm;">
+    <h1>Farbe &amp; Bild <span style="color:var(--flieder-text);">01</span></h1>
+    <div class="pair"><h5>Wirkung</h5><p>Warm, echt, appetitlich. Farben, die nach Holz, Glut und
+      gutem Essen aussehen — Vertrauen statt Hochglanz.</p></div>
+    <div class="pair"><h5>Codierung</h5><p>Erdtöne als Basis, ein satter Akzent, Weiß als Ruhe.
+      Bilder dokumentarisch: Hände, Produkt, Menschen bei der Arbeit — „Wir zeigen, was wir machen."
+      Keine Stockfotos, nichts Gestelltes.</p></div>
+    <div class="pair"><h5>Sprache</h5><p>Kurze Sätze, herzlich, klar. Die „Gut …"-Trias als
+      wiederkehrender Anker auf allen Kanälen.</p></div>
+    <div class="img ph">[ Anwendungs-Mockup: Karte / Schild / Post ]</div>
+  </div>
+</div>
+
+<!-- 16 · RICHTUNG 2 -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Basis aus <i>Momenten</i></div>
+  <div class="rubrik-copy">Richtung 02 — gewinnt neue Gäste und Feiern. Das Haus als Bühne für
+    besondere Anlässe: heller, editorialer, festlicher.</div>
+  <div class="content" style="padding-top:46mm;">
+    <div class="cap">Decodierung der Basis</div>
+    <div style="font-style:italic; font-weight:700; font-size:6.4mm; color:var(--flieder-text); margin-bottom:8mm;">
+      Atmosphäre &nbsp;·&nbsp; Festlichkeit &nbsp;·&nbsp; Leichtigkeit &nbsp;·&nbsp; Erinnerung</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:6mm;">
+      <div class="ph" style="height:74mm;">[ Moodboard: gedeckte Tafel, Kerzen ]</div>
+      <div class="ph" style="height:74mm;">[ Moodboard: Feier im Stadl ]</div>
+      <div class="ph" style="height:74mm;">[ Moodboard: Hotelzimmer, Morgenlicht ]</div>
+    </div>
+    <p style="margin-top:6mm; font-size:3.2mm; color:var(--ink-soft); width:160mm; line-height:1.55;">
+      Wirkung: einladend, wertig, „da will ich feiern". Editorial statt Werbelook —
+      mehr „mal schauen" als „schau mal".</p>
+  </div>
+</div>
+
+<!-- 17 · KONTRAST -->
+<div class="slide">
+  <div class="head" style="z-index:2;"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="vs">
+    <div class="r" style="border-right:.4mm solid #eee;"><h2 style="color:var(--flieder-text);">Visualität aus <b>Handwerk</b></h2>
+      <small style="color:var(--ink-soft);">Empfehlung — weil das Zurückgewinnen der Region jetzt Vorrang hat. Richtung 02 bleibt als Event-Ebene darunter nutzbar.</small></div>
+    <div class="l" style="background:#fff;"><h2 style="color:#c9c4d6;">Visualität aus <b>Momenten</b></h2>
+      <small style="color:#c9c4d6;">Stark für Events &amp; Hotel — als Führung des ganzen Hauses aber zu weit weg von der Stammkundschaft.</small></div>
+  </div>
+</div>
+
+<!-- 18 · TRENNER SYSTEM -->
+<div class="slide"><div class="trenner">
+  <div class="cc">Creative<br><b>Consulting</b></div>
+  <div class="proj">FERBER — Gästegewinnung</div>
+  <ul>
+    <li>01_Schnellschüsse</li><li>02_Strategie</li><li>03_Visualität</li>
+    <li class="act"><b>04_System &amp; Funnel</b></li>
+  </ul>
+</div></div>
+
+<!-- 19 · FUNNEL -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">Gäste<i>gewinnung</i></div>
+  <div class="rubrik-copy">Die neuralgischen Punkte sind keine Baustellenliste — sie sind
+    Stufen einer Kette. Jede Stufe bekommt genau die Werkzeuge, die sie braucht.</div>
+  <div class="content" style="padding-top:44mm;">
+    <div class="funnel">
+      <div class="step"><h4>Finden<span>Stufe 1</span></h4>
+        <li>Google-Profil sauber &amp; wertig</li><li>Maps, Zeiten, Kategorien</li><li>konsistent mit allem</li></div>
+      <div class="step"><h4>Verstehen<span>Stufe 2</span></h4>
+        <li>Website beantwortet in 5 Sek.: Um was geht es? Was erwartet mich?</li><li>fünf Betriebe, ein Haus — im ersten Screen</li></div>
+      <div class="step"><h4>Wollen<span>Stufe 3</span></h4>
+        <li>Social: „Wir zeigen, was wir machen"</li><li>2 feste Formate/Woche</li><li>Handwerk &amp; Momente</li></div>
+      <div class="step"><h4>Kommen<span>Stufe 4</span></h4>
+        <li>Reservierung reibungsfrei</li><li>Event-Anfrage unübersehbar</li><li>Öffnungszeiten überall gleich</li></div>
+      <div class="step"><h4>Wiederkommen<span>Stufe 5</span></h4>
+        <li>Stammgast-Reaktivierung</li><li>Kalender &amp; Storys</li><li>Newsletter mit echtem Grund</li></div>
+    </div>
+  </div>
+</div>
+
+<!-- 20 · KAPAZITÄTS-REGEL -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="statement">
+    <h1>Das System sendet,<br>ohne dass ihr sendet.
+    <small>Weil eure Zeit gerade das Knappste ist: nur Formate, die im Batch entstehen —
+      feste Vorlagen, feste Rhythmen, keine tägliche Betreuung.</small></h1>
+  </div>
+</div>
+
+<!-- 21 · KPI -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="rubrik">KPI<i>neu gelesen</i></div>
+  <div class="statement" style="padding-top:10mm;">
+    <h1 style="font-size:9.5mm; text-align:left; line-height:1.7;">
+      <span style="color:var(--flieder-text);">kpi =</span> keep people interested.<br>
+      <span style="color:var(--flieder-text);">kpi =</span> keep people informed.<br>
+      <span style="color:var(--flieder-text);">kpi =</span> keep people involved.<br>
+      <span style="color:var(--flieder-text);">kpi =</span> keep people inspired.</h1>
+  </div>
+</div>
+
+<!-- 22 · SCHLUSSAKKORD -->
+<div class="slide">
+  <div class="head"><b>tbwrks</b><span>FERBER</span></div>
+  <div class="statement">
+    <h1>Man muss nicht laut sein,<br>um wieder gehört zu werden.<br>Nur klar.</h1>
+  </div>
+</div>
+
+<!-- 23 · DANKE -->
+<div class="slide">
+  <div class="trenner" style="padding-top:74mm;">
+    <div class="cc" style="font-size:17mm;">Danke<b>schön</b></div>
+    <div class="proj">Strategische Gestaltung · Gästegewinnungssystem</div>
+    <div style="font-style:italic; margin-top:5mm; font-size:4.4mm; color:#ffffffd0;">2. Juli 2026 — Projekt Statusgeber (Layout-Stand)</div>
+    <div class="foot-c">Die Inhalte dieser Präsentation unterliegen meinem Urheberrecht (tbwrks). Jegliche Verwendung, Vervielfältigung, Verbreitung oder Weitergabe der in dieser Präsentation enthaltenen Informationen ist ohne meine ausdrückliche schriftliche Genehmigung untersagt. Diese Einschränkung gilt bis zur vollständigen Bezahlung der vereinbarten Vergütung für die Nutzung der Inhalte.</div>
+  </div>
+</div>
+
+</body>
+</html>
