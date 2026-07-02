@@ -15,10 +15,31 @@ einem Dokument ist als **Kandidat** markiert, nicht als gesichertes Prinzip.
 
 ## Status
 
-- Dokumente empfangen: **1** (Werk-Evidenz)
-- Selbstauskunfts-Dateien eingebunden: **5** (Ordner `kontext/`)
-- Geschätzter Umfang laut Auftrag: ~1.500 Seiten
-- Aktuelle Phase: **1 — Aufnahme läuft (Kanal verifiziert)**
+- Werk-Evidenz empfangen: **10 Projekte / 786 reale Seiten** (Ordner `dokumente/`)
+- Selbstauskunft eingebunden: **10 Dateien** inkl. bereits vorhandener Selbst-
+  Kodifizierung (`SKILL.md`, `prozessmodell.md`, `prinzipien.md`, `wording.md`,
+  `case-library.md`) + 5 Interview-Dateien.
+- Hinweis: „1.500 Seiten" aus dem Auftrag war ein Zählartefakt (Bild-Assets je
+  Seite). Realer Umfang der Werk-Evidenz: **786 Seiten**.
+- Aktuelle Phase: **2 — Validierung der Selbst-Kodifizierung gegen Werk-Evidenz**
+
+## Korpus-Register (Werk-Evidenz)
+
+| Datei | Seiten | Projekttyp lt. Selbstauskunft |
+|---|---|---|
+| DEHOGA_..._Identity-Konzeption_xs.pdf | 145 | E (Event-Identity, Phasentrichter) |
+| Fetsch_..._Branding-Konzeption_xs.pdf | 121 | B (volles Rebranding, „inspecto") |
+| ERC_..._Branding-Konzeption.pdf | 97 | C (Varianten/Sondertrikot, Panther) |
+| Ferber_..._Konzeption_xs.pdf | 89 | B (Gastro/Hotel, nur Phase 1) |
+| init_..._Branding-Konzeption_xs.pdf | 65 | B (INIT, 14-Punkte-Briefing) |
+| BWAgrar_..._ArtDirection.pdf | 59 | (noch nicht in Selbstauskunft) |
+| tws_..._Identity-Konzeption_xs.pdf | 47 | B (Tanzschule, Moods) |
+| MaWi_..._Vermarktungs-Konzeption_xs.pdf | 34 | A (reines Consulting) |
+| Natugena_..._Produktdesign-Konzpetion.pdf | 17 | D (schnelle Exploration) |
+| BiSchw_..._Identity-Konzeption.pdf | 15 | (Packaging, „Pickplatz") — s. Dok 01 |
+
+**Auffälligkeit:** `BWAgrar` (59 S.) taucht in der Selbstauskunft nirgends auf —
+potenziell neues, noch nicht kodifiziertes Projekt/Projekttyp. Zu prüfen.
 
 ## Zwei Quell-Ebenen (strikt getrennt)
 
