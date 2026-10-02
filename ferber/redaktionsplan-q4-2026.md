@@ -3,7 +3,7 @@
 Generiert aus `posts.json` am 02.10.2026. Nicht von Hand bearbeiten: `posts.json` ändern und `python3 ferber/build.py` ausführen.
 
 - Kunde: FERBER Monheim · Restaurant · Stadt.Stadl · Hotel
-- Zeitraum: KW 41–53 · 06.10.2026 – 03.01.2027
+- Zeitraum: KW 41–52 · 06.10.2026 – 27.12.2026
 - Takt: Di statisch (17:30) · Do animiert (17:30) · So statisch (11:00)
 - Grundlage: FERBER Social-Fahrplan, Stand 04.09.2026
 
@@ -13,26 +13,26 @@ Generiert aus `posts.json` am 02.10.2026. Nicht von Hand bearbeiten: `posts.json
 |---|---|
 | Restaurant | 13 |
 | Weihnachtsfeiern | 6 |
-| Grundrauschen | 4 |
 | Hochzeit | 4 |
-| Silvester | 4 |
 | Eröffnung | 3 |
-| Beweis | 3 |
+| Grundrauschen | 3 |
+| Silvester | 3 |
+| Beweis | 2 |
 | Hotel | 1 |
 | Familie | 1 |
 
 | Format | Posts |
 |---|---|
-| statisch · Feed | 16 |
-| animiert · Reel | 13 |
-| statisch · Carousel | 10 |
+| statisch · Feed | 15 |
+| animiert · Reel | 12 |
+| statisch · Carousel | 9 |
 
 | Botschaft | Posts |
 |---|---|
 | Gut essen | 14 |
-| Gut feiern | 13 |
+| Gut feiern | 12 |
 | Gut sein | 7 |
-| Beweis | 5 |
+| Beweis | 3 |
 
 Platzhalter in eckigen Klammern (zum Beispiel `[Gericht]`) füllt Tobias beim Terminieren. Jede Caption ist ein Entwurf und wird vor dem Einstellen in eigene Worte gebracht.
 
@@ -826,7 +826,7 @@ Platzhalter in eckigen Klammern (zum Beispiel `[Gericht]`) füllt Tobias beim Te
 
 **Linkziel:** `https://www.ferber-monheim.de/restaurant?utm_source=instagram&utm_medium=post&utm_campaign=silvester`
 
-**Hinweis:** Platzzahl am Montag prüfen. Wenn ausverkauft: Post in „Ausverkauft, danke“ umschreiben, das ist auch Beweis.
+**Hinweis:** Platzzahl am Montag prüfen. Wenn ausverkauft: Post in „Ausverkauft, danke“ umschreiben, das ist auch Beweis. Letzter geplanter Silvester-Post: Der 31.12. selbst läuft live in Stories, der Danke-Post am 01.01. kommt in den Januar-Plan.
 
 </details>
 
@@ -853,7 +853,7 @@ Platzhalter in eckigen Klammern (zum Beispiel `[Gericht]`) füllt Tobias beim Te
 
 ## KW 52 · 21.–27.12.
 
-**Fokus:** Familienfeiern-Teaser. Weihnachtsgruß. Der wichtigste Post des Quartals: Verlobt? Feiert bei uns.
+**Fokus:** Letzte Planwoche: Familienfeiern-Teaser, Weihnachtsgruß, der wichtigste Post des Quartals: Verlobt? Feiert bei uns. Silvester läuft am 31.12. live in Stories, Jahresrückblick und Danke gehören in den Januar-Plan.
 
 | Datum | Slot | Format | Kampagne | Botschaft | Titel |
 |---|---|---|---|---|---|
@@ -921,76 +921,5 @@ Platzhalter in eckigen Klammern (zum Beispiel `[Gericht]`) füllt Tobias beim Te
 **Linkziel:** `https://www.ferber-monheim.de/stadtstadl?utm_source=instagram&utm_medium=post&utm_campaign=hochzeit#anfrageformular`
 
 **Hinweis:** Wichtigster Post des Quartals (Fahrplan). Story-Version zwischen 27.12. und 06.01. mehrfach wiederholen, Link-Sticker auf die Anfrage.
-
-</details>
-
-## KW 53 · 28.12.–03.01.
-
-**Fokus:** Jahresrückblick. Silvester live. Danke und Januar-Ausblick (Familienkampagne Q1).
-
-| Datum | Slot | Format | Kampagne | Botschaft | Titel |
-|---|---|---|---|---|---|
-| 29.12.2026 17:30 | Di | statisch · Carousel | Grundrauschen | Beweis | 2026 in Bildern |
-| 31.12.2026 12:00 | Do | animiert · Reel | Silvester | Gut feiern | Heute Abend |
-| 03.01.2027 11:00 | So | statisch · Feed | Beweis | Beweis | So ging 2026 zu Ende |
-
-<details>
-<summary><b>Di 29.12.2026 · 2026 in Bildern</b></summary>
-
-**Asset:** Carousel 8–10 Bilder: Umbau, Fassade, Eröffnung, Gericht der Woche, voller Stadl, Team, Familie. Titelkarte Schwarz/Weiß.
-
-**Caption (Entwurf):**
-
-> 2026 in [X] Bildern.
->
-> Umbau, Eröffnung, [Anzahl] Weihnachtsfeiern, die erste Hochzeit im neuen Stadl, ein Team, das [ein Satz].
->
-> Danke an alle, die mit uns gegessen, gefeiert und geblieben sind. 2027 machen wir weiter.
-
-**Hashtags (12):** #danke #rückblick #gutezeiten #gäste #gastgeber #familienbetrieb #teamferber #hinterdenkulissen #ferbermonheim #monheim #donauries #gutessengutfeierngutsein
-
-**Linkziel:** `https://www.ferber-monheim.de/?utm_source=instagram&utm_medium=post&utm_campaign=jahresrueckblick`
-
-**Hinweis:** Jahresrückblick laut Fahrplan. Nur Bilder mit vorhandenen Freigaben.
-
-</details>
-
-<details>
-<summary><b>Do 31.12.2026 · Heute Abend</b></summary>
-
-**Asset:** Kurzes Reel aus Vorbereitungs-Clips vom Tag (Tische decken, Küche, Deko), Cover Nachtblau. Alternativ animierter Typo-Post „31.12. Heute.“
-
-**Caption (Entwurf):**
-
-> Heute Abend ist es so weit.
->
-> [Format] im FERBER, Mitternacht am Marktplatz. Wer dabei ist: bis später. Wer nicht: guten Rutsch, wir sehen uns 2027.
-
-**Hashtags (10):** #silvester #silvester2026 #silvestermenü #jahreswechsel #ferbermonheim #monheim #donauries #gutessengutfeierngutsein #gutenrutsch #neujahr2027
-
-**Linkziel:** `https://www.ferber-monheim.de/restaurant?utm_source=instagram&utm_medium=post&utm_campaign=silvester`
-
-**Hinweis:** Posting 12:00. Den Abend live in Stories begleiten (wie die Eröffnung), am 01.01. Danke-Story.
-
-</details>
-
-<details>
-<summary><b>So 03.01.2027 · So ging 2026 zu Ende</b></summary>
-
-**Asset:** Bestes Still vom Silvesterabend (voller Raum, Mitternacht) im Feed-Master.
-
-**Caption (Entwurf):**
-
-> So ging 2026 zu Ende.
->
-> Danke an alle, die mit uns ins neue Jahr gefeiert haben. 2027 startet bei uns am [Datum] mit [Gericht/Karte].
->
-> Und wer im Frühjahr Taufe, Kommunion oder Firmung feiert: Der Januar ist der Monat, in dem die Termine weggehen. Link in der Bio.
-
-**Hashtags (12):** #danke #rückblick #gutezeiten #gäste #familienfeier #taufe #kommunion #firmung #ferbermonheim #monheim #donauries #gutessengutfeierngutsein
-
-**Linkziel:** `https://www.ferber-monheim.de/stadtstadl?utm_source=instagram&utm_medium=post&utm_campaign=familienfeier#anfrageformular`
-
-**Hinweis:** Fotos vom 31.12. mit Freigabe. Q1-Planung laut Fahrplan: Familienkampagne scharf schalten, Hochzeitsmessen prüfen.
 
 </details>

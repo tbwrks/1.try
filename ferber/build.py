@@ -21,7 +21,7 @@ BOTSCHAFT = {"essen": "Gut essen", "feiern": "Gut feiern", "sein": "Gut sein", "
 TYPEN = {"Feed", "Carousel", "Reel"}
 REQUIRED = ["id", "datum", "uhrzeit", "kw", "slot", "format", "typ", "kampagne",
             "botschaft", "titel", "asset", "caption", "hashtag_sets", "link", "status"]
-EXPECTED_WEEKS = [(2026, kw) for kw in range(41, 54)]
+EXPECTED_WEEKS = [(2026, kw) for kw in range(41, 53)]
 MIN_TAGS, MAX_TAGS, MAX_CHARS = 8, 15, 2200
 
 

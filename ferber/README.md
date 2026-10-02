@@ -2,13 +2,13 @@
 
 Stand 02.10.2026 · tbwrks für FERBER Monheim (Restaurant · Stadt.Stadl · Hotel)
 
-Dieser Ordner ist das Arbeitssystem für drei Instagram-Posts pro Woche im vierten Quartal 2026. Er setzt auf dem FERBER Social-Fahrplan vom 04.09.2026 auf (Leitidee, drei Ebenen, sechs Kampagnen, Wochenroutine) und macht daraus einen Ablauf, der montags in 30 Minuten durchläuft.
+Dieser Ordner ist das Arbeitssystem für drei Instagram-Posts pro Woche vom 06.10. bis 27.12.2026 (KW 41–52). Er setzt auf dem FERBER Social-Fahrplan vom 04.09.2026 auf (Leitidee, drei Ebenen, sechs Kampagnen, Wochenroutine) und macht daraus einen Ablauf, der montags in 30 Minuten durchläuft.
 
 ## Was hier liegt
 
 | Datei | Was sie ist |
 |---|---|
-| `posts.json` | Die einzige Datenquelle: 39 Posts von Di 06.10.2026 bis So 03.01.2027 mit Datum, Format, Kampagne, Botschaft, Material-Hinweis, Caption-Entwurf, Hashtag-Sets, Linkziel und Hinweisen. |
+| `posts.json` | Die einzige Datenquelle: 36 Posts von Di 06.10.2026 bis So 27.12.2026 mit Datum, Format, Kampagne, Botschaft, Material-Hinweis, Caption-Entwurf, Hashtag-Sets, Linkziel und Hinweisen. |
 | `redaktionsplan-q4-2026.md` | Lesbare Wochenübersicht, aus `posts.json` erzeugt. Nicht von Hand ändern. |
 | `hashtags.md` | Die Hashtag-Sets mit Begründung und Regeln. |
 | `build.py` | Prüft `posts.json` (3 Posts je Woche, Slots, Zeichen, Hashtags) und schreibt den Redaktionsplan neu. |
@@ -100,3 +100,11 @@ So bleibt die Datei sauber:
 - Hotel: Zimmeranzahl, Frühstücks- und Check-in-Zeiten (Post am 08.12.), laut Relaunch-Befund noch widersprüchlich.
 - Feiertagsöffnungszeiten 24.–26.12., 31.12., 01.01. (Posts ab 13.12.).
 - Content-Tag 2 im Oktober: Metzgerei, neues Interior, Familienfeier-Gerichte (Posts am 27.10. und 22.12. hängen daran).
+
+## Für den Januar-Plan vorgemerkt
+
+Der Plan endet am So 27.12. mit „Verlobt? Feiert bei uns.“ Diese drei Posts aus der ursprünglichen KW 53 sind gestrichen und gehören in den nächsten Plan:
+
+- **Di 29.12. · 2026 in Bildern** (Carousel, Jahresrückblick und Danke an Gäste und Team).
+- **Do 31.12. · Heute Abend** (Reel am Mittag, der Abend selbst läuft laut Fahrplan live in Stories).
+- **So 03.01. · So ging 2026 zu Ende** (Danke nach Silvester, Hinweis auf Taufe, Kommunion, Firmung: Januar ist Buchungsmonat).
