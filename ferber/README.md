@@ -20,14 +20,14 @@ Dieser Ordner ist das Arbeitssystem für drei Instagram-Posts pro Woche vom 06.1
 2. **Gestalten in InDesign:** Statische Posts aus den Mastern exportieren. Animierte Posts aus dem Export in Adobe Express animieren oder als Reel aus den 9:16-Clips schneiden.
 3. **In Adobe Express terminieren:** Datei oder Express-Dokument in den Content-Planer, Caption aus dem Post-Planer kopieren und in eigene Worte bringen, Hashtag-Block anhängen, Datum und Uhrzeit aus dem Plan setzen.
 4. **Status setzen:** Im Post-Planer auf „terminiert“, nach dem Erscheinen auf „veröffentlicht“.
-5. **Kontrolle:** Donnerstag kurz in die Meta Business Suite schauen, ob die Termine der Woche dort erscheinen. Stories bleiben live aus dem Haus (Fr/Sa) und laufen nicht über diesen Plan.
+5. **Kontrolle:** Der Kalender im Express-Planer zeigt, was ansteht. In der Meta Business Suite und auf Instagram erscheinen Express-Posts erst, sobald sie veröffentlicht sind (Express schickt sie zur Postzeit über die Meta-Schnittstelle). Stories bleiben live aus dem Haus (Fr/Sa) und laufen nicht über diesen Plan.
 
 ## 0. Einmalig einrichten
 
 - **Adobe Express mit Instagram verbinden:** In Express den Content-Planer (Bereich „Planen“ bzw. „Inhalte planen“) öffnen und das Instagram-Konto von FERBER über den Meta-Login verbinden. Dafür braucht es den Zugang, mit dem du heute in der Meta Business Suite postest (Facebook-Seite mit verknüpftem Instagram-Business-Konto). Die Bezeichnungen in Express ändern sich gelegentlich, der Weg bleibt: Planen → Konto verbinden → Meta/Facebook anmelden → FERBER-Seite und Instagram-Konto auswählen.
 - **Bio-Link mit UTM:** `https://www.ferber-monheim.de/?utm_source=instagram&utm_medium=bio` als Website-Link im Profil. Jeder Post im Plan hat zusätzlich ein eigenes Linkziel mit `utm_campaign`; das ist für Link-Sticker in Stories und für die Auswertung gedacht, in der Caption steht immer nur „Link in der Bio“.
 - **InDesign-Master anlegen** (laut Fahrplan): Feed und Carousel 1080 × 1350 px, Reel-Cover und Story 1080 × 1920 px. Hurme Geometric Sans, Logo-Grün #6A8586, Kampagnenfarbe nur als Akzentfläche (Rot Weihnachten, Karamell Restaurant, Nachtblau Silvester/Hotel, Pflaume Hochzeit/Familie).
-- **Testlauf:** Einen beliebigen Post exportieren, auf Content Credentials prüfen (siehe unten), in Express importieren, auf einen Testtermin in der nächsten Woche setzen, in der Meta Business Suite kontrollieren, dann löschen. Danach ist der Weg bekannt und der Montag dauert 30 Minuten.
+- **Testlauf:** Der erste echte Post (Di 06.10., 17:30) ist der Test. Exportieren, auf Content Credentials prüfen (siehe unten), in Express importieren und terminieren, um 17:30 auf Instagram nachsehen. Erscheint er, bleibt Express der Weg. Erscheint er nicht, zeigt Express im Kalender einen Fehler; dann den Post von Hand in der Meta Business Suite einstellen und die Verbindung neu herstellen. Danach ist der Weg bekannt und der Montag dauert 30 Minuten.
 
 ## 1. Montag: der 30-Minuten-Block
 
@@ -64,7 +64,7 @@ Zwei Wege, je nach Material:
 5. Vorschau prüfen: Bildausschnitt, Zeilenumbrüche, kein abgeschnittener Text.
 6. Terminieren. Status im Post-Planer auf „terminiert“.
 
-Wenn der Content-Planer etwas nicht kann (Stories, bestimmte Reel-Formate), diesen einen Post in der Meta Business Suite planen. Es bleibt bei einem Plan und einer Caption-Quelle.
+Wenn der Content-Planer etwas nicht kann (Stories, zu lange oder zu große Reels), diesen einen Post in der Meta Business Suite planen: Datei aus Express herunterladen, dort hochladen, dieselbe Caption. Es bleibt bei einem Plan und einer Caption-Quelle. Nie denselben Post in beiden Werkzeugen terminieren, sonst erscheint er doppelt.
 
 ## 5. Checkliste vor jedem Terminieren
 
