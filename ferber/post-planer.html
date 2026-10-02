@@ -1,0 +1,419 @@
+<title>FERBER Post-Planer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Kopf mit Fortschritt, darunter eine klebende Filterleiste, dann Wochenblöcke mit je drei Post-Karten (Di/Do/So), die auf dem Handy untereinander stehen. */
+:root{
+  --paper:#F6F5F0;
+  --card:#FFFFFF;
+  --soft:#ECEFEA;
+  --ink:#26312F;
+  --muted:#68756F;
+  --line:#DDE1DB;
+  --green:#6A8586;
+  --green-soft:#E4EAE8;
+  --red:#9E4A3E;
+  --red-soft:#F3E4E0;
+  --brass:#A07E35;
+  --brass-soft:#F1EAD8;
+  --plum:#7D5B75;
+  --plum-soft:#EDE4EB;
+  --navy:#3E5570;
+  --navy-soft:#E2E8EF;
+  --chip-ink:#FFFFFF;
+  --mark:#FFF0B3;
+  --mark-ink:#4A3A00;
+  --ok:#3F7A58;
+  --focus:#3E5570;
+  --font-display:"Jost","Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;
+  --font-body:"Hanken Grotesk",-apple-system,"Segoe UI",sans-serif;
+  --font-mono:ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#161B1A; --card:#1F2624; --soft:#242C2A; --ink:#E7ECE9; --muted:#9AA8A2; --line:#333D3A;
+    --green:#8FAAA8; --green-soft:#28403C; --red:#C97F6F; --red-soft:#402723; --brass:#C4A15C; --brass-soft:#3B331C;
+    --plum:#B08BA6; --plum-soft:#3A2B37; --navy:#8FA6C0; --navy-soft:#26303C; --chip-ink:#161B1A;
+    --mark:#4A4320; --mark-ink:#F3E6A8; --ok:#7CBF95; --focus:#8FA6C0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#161B1A; --card:#1F2624; --soft:#242C2A; --ink:#E7ECE9; --muted:#9AA8A2; --line:#333D3A;
+  --green:#8FAAA8; --green-soft:#28403C; --red:#C97F6F; --red-soft:#402723; --brass:#C4A15C; --brass-soft:#3B331C;
+  --plum:#B08BA6; --plum-soft:#3A2B37; --navy:#8FA6C0; --navy-soft:#26303C; --chip-ink:#161B1A;
+  --mark:#4A4320; --mark-ink:#F3E6A8; --ok:#7CBF95; --focus:#8FA6C0; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.55;margin:0}
+.app{max-width:1180px;margin:0 auto;padding-block:32px 96px;padding-inline:20px}
+h1,h2,h3{font-family:var(--font-display);line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0}
+button,select,input{font:inherit;color:inherit}
+:is(button,select,input,summary,a):focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* Kopf */
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:20px}
+.eyebrow{font-family:var(--font-display);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:600;color:var(--green);margin-bottom:6px}
+.top h1{font-size:2.2rem;font-weight:600}
+.claim{font-family:var(--font-display);font-weight:500;color:var(--muted);margin-top:4px}
+.progress{min-width:min(100%,280px);flex:0 1 320px}
+.progress .nums{display:flex;justify-content:space-between;gap:12px;font-family:var(--font-display);font-size:.85rem;font-weight:600}
+.progress .nums span b{font-variant-numeric:tabular-nums}
+.progress .track{height:8px;background:var(--soft);border:1px solid var(--line);margin-top:6px;overflow:hidden;display:flex}
+.progress .fill{height:100%;background:var(--green)}
+.progress .fill.pub{background:var(--ok)}
+.progress .sub{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+/* Filterleiste */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding-block:10px;margin-bottom:8px;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+.bar .group{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.bar .cap{font-family:var(--font-display);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;margin-right:2px}
+.chipbtn{font-family:var(--font-display);font-size:.78rem;font-weight:500;padding:5px 11px;border:1px solid var(--line);background:var(--card);border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chipbtn .dot{width:8px;height:8px;border-radius:50%;background:var(--k,var(--green))}
+.chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chipbtn[aria-pressed="true"] .dot{outline:1px solid var(--paper)}
+.chipbtn.today{border-color:var(--ink);font-weight:600}
+.bar label.tog{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;cursor:pointer}
+.howto{font-size:.92rem;color:var(--muted);max-width:70ch;margin-block:14px 28px}
+.howto b{color:var(--ink);font-weight:600}
+
+/* Wochen */
+.week{margin-bottom:36px}
+.week-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.week-head h2{font-size:1.25rem;font-weight:600}
+.week-head .range{font-family:var(--font-display);font-size:.85rem;color:var(--muted);font-weight:500}
+.week-head .now{font-family:var(--font-display);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;font-weight:600;color:var(--paper);background:var(--ink);padding:2px 8px 3px}
+.week-head .fokus{flex-basis:100%;font-size:.9rem;color:var(--muted);max-width:90ch}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.week.quiet{display:none}
+.week .none{font-size:.88rem;color:var(--muted);padding:10px 0}
+
+/* Post-Karte */
+.post{--k:var(--green);--k-soft:var(--green-soft);background:var(--card);border:1px solid var(--line);border-top:4px solid var(--k);padding:16px 16px 14px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.post[hidden]{display:none}
+.post.done{border-top-color:var(--ok)}
+.post-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.when{font-family:var(--font-display);font-size:.95rem}
+.when b{font-weight:600}
+.when span{color:var(--muted);font-variant-numeric:tabular-nums;margin-left:4px}
+.chips{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.chip{font-family:var(--font-display);font-size:.66rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px 3px;border-radius:2px}
+.chip.k{background:var(--k);color:var(--chip-ink)}
+.chip.f{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.chip.s{background:var(--ok);color:var(--chip-ink)}
+.post h3{font-size:1.08rem;font-weight:600}
+.botschaft{font-size:.82rem;color:var(--muted);font-family:var(--font-display);font-weight:500}
+.botschaft::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--k);margin-right:6px;vertical-align:1px}
+details.asset{border:1px solid var(--line);background:var(--soft);padding:8px 10px;font-size:.86rem}
+details.asset summary{cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+details.asset p{margin-top:6px;color:var(--ink)}
+.label{font-family:var(--font-display);font-size:.68rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between;gap:8px}
+.caption{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.92rem;line-height:1.5;border-left:3px solid var(--k-soft);padding-left:10px}
+.caption mark{background:var(--mark);color:var(--mark-ink);padding:0 3px;border-radius:2px}
+.tags p{font-size:.84rem;color:var(--muted);overflow-wrap:anywhere;line-height:1.5}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.btn{font-family:var(--font-display);font-weight:600;font-size:.82rem;padding:8px 10px;border:1px solid var(--ink);background:var(--card);cursor:pointer;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btn:hover{background:var(--soft)}
+.btn.primary{grid-column:1/-1;background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--green);border-color:var(--green);color:var(--chip-ink)}
+.link{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);overflow-wrap:anywhere}
+.hinweis{background:var(--red-soft);border-left:3px solid var(--red);padding:8px 10px;font-size:.84rem}
+.hinweis b{font-family:var(--font-display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.68rem;display:block;color:var(--red);margin-bottom:2px}
+.status{border-top:1px solid var(--line);padding-top:10px;display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:center;margin-top:auto}
+.status label{font-family:var(--font-display);font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600}
+.status select,.status input{width:100%;min-width:0;padding:6px 8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:2px}
+.status select:disabled,.status input:disabled{opacity:.6}
+.post.done .status select{border-color:var(--ok)}
+
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--paper);font-family:var(--font-display);font-weight:600;font-size:.88rem;padding:10px 16px;border-radius:2px;z-index:20;box-shadow:0 6px 24px rgba(0,0,0,.18)}
+.state{font-size:.95rem;color:var(--muted);padding:40px 0;text-align:center}
+.state.error{color:var(--red)}
+.sr{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}
+
+@media (max-width:900px){.posts{grid-template-columns:1fr}}
+@media (max-width:520px){.top h1{font-size:1.8rem}.actions{grid-template-columns:1fr}.app{padding-inline:16px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="app">
+  <header class="top">
+    <div>
+      <p class="eyebrow">tbwrks × FERBER Monheim · Instagram Q4 2026</p>
+      <h1>Post-Planer</h1>
+      <p class="claim">Gut essen. Gut feiern. Gut sein.</p>
+    </div>
+    <div class="progress" id="progress" aria-live="polite">
+      <div class="nums"><span><b id="n-term">0</b> terminiert</span><span><b id="n-pub">0</b> veröffentlicht</span><span><b id="n-all">0</b> gesamt</span></div>
+      <div class="track" aria-hidden="true"><div class="fill pub" id="f-pub" style="width:0%"></div><div class="fill" id="f-term" style="width:0%"></div></div>
+      <p class="sub" id="storage-note">Status wird geladen.</p>
+    </div>
+  </header>
+
+  <div class="bar" id="bar">
+    <button class="chipbtn today" id="btn-today" type="button">Diese Woche</button>
+    <div class="group" id="f-kampagne"><span class="cap">Kampagne</span></div>
+    <div class="group" id="f-format">
+      <span class="cap">Format</span>
+      <button class="chipbtn" type="button" data-format="alle" aria-pressed="true">Alle</button>
+      <button class="chipbtn" type="button" data-format="statisch" aria-pressed="false">Statisch</button>
+      <button class="chipbtn" type="button" data-format="animiert" aria-pressed="false">Animiert</button>
+    </div>
+    <label class="tog"><input type="checkbox" id="f-offen"> Nur offene</label>
+  </div>
+
+  <p class="howto"><b>Montag, 30 Minuten:</b> „Diese Woche“ drücken, die drei Posts lesen, Platzhalter in <mark style="background:var(--mark);color:var(--mark-ink);padding:0 3px">[Klammern]</mark> klären, dann <b>Caption + Hashtags kopieren</b>, in Adobe Express in eigene Worte bringen, terminieren und den Status setzen.</p>
+
+  <main id="weeks"><p class="state" id="loading">Lade posts.json …</p></main>
+
+  <footer>
+    <span id="meta-line">Quelle: posts.json</span>
+    <span>Drei Posts pro Woche · Di statisch · Do animiert · So statisch</span>
+  </footer>
+</div>
+<div class="toast" id="toast" hidden></div>
+<textarea class="sr" id="clip" aria-hidden="true" tabindex="-1"></textarea>
+
+<script>
+(function(){
+  "use strict";
+  var KCOLOR = {"Weihnachtsfeiern":"red","Eröffnung":"brass","Restaurant":"brass","Silvester":"navy","Hochzeit":"plum","Familie":"plum","Grundrauschen":"green","Beweis":"green","Hotel":"green"};
+  var BOTSCHAFT = {essen:"Gut essen · Restaurant", feiern:"Gut feiern · Stadt.Stadl", sein:"Gut sein · Hotel & Gastgeber", beweis:"Beweis · Rückblick & Danke"};
+  var SLOT = {di:"Di", "do":"Do", so:"So"};
+  var STATUS = ["offen","terminiert","veröffentlicht"];
+  var LS_FILTER = "ferber-planer-filter", LS_STATE = "ferber-planer-state";
+
+  var DATA = null, POSTS = [], SETS = {};
+  var st = {status:{}, notiz:{}};
+  var db = null, dbMode = "local", canWrite = true;
+  var writeChain = {}, noteTimers = {};
+  var filter = {kampagnen:[], format:"alle", offen:false};
+
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var esc = function(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); };
+  var lsGet = function(k){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch(e){ return null; } };
+  var lsSet = function(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} };
+
+  function isoWeek(d){
+    var t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    var day = t.getUTCDay() || 7;
+    t.setUTCDate(t.getUTCDate() + 4 - day);
+    var y = t.getUTCFullYear();
+    var w = Math.ceil((((t - Date.UTC(y,0,1)) / 86400000) + 1) / 7);
+    return y + "-" + w;
+  }
+  function weekKey(iso){ var p = iso.split("-"); return isoWeek(new Date(+p[0], +p[1]-1, +p[2])); }
+  function fmtDate(iso){ var p = iso.split("-"); return p[2] + "." + p[1] + "."; }
+  function tagsOf(p){
+    var t = [];
+    (p.hashtag_sets||[]).forEach(function(n){ t = t.concat(SETS[n]||[]); });
+    return t.concat(p.hashtags_extra||[]);
+  }
+  function fullText(p){ return p.caption + "\n\n" + tagsOf(p).join(" "); }
+  function captionHtml(c){ return esc(c).replace(/\[([^\]]+)\]/g, "<mark>[$1]</mark>"); }
+
+  function toast(msg){
+    var t = $("#toast"); t.textContent = msg; t.hidden = false;
+    clearTimeout(toast._t); toast._t = setTimeout(function(){ t.hidden = true; }, 1600);
+  }
+  function copyText(text, label){
+    var done = function(){ toast(label + " kopiert"); };
+    var fallback = function(){
+      var ta = $("#clip"); ta.value = text; ta.focus(); ta.select();
+      var ok = false; try { ok = document.execCommand("copy"); } catch(e){}
+      if (ok) done(); else toast("Kopieren nicht möglich. Text markieren und mit Strg+C kopieren.");
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
+  }
+
+  function postCard(p){
+    var tags = tagsOf(p), col = KCOLOR[p.kampagne] || "green";
+    var el = document.createElement("article");
+    el.className = "post"; el.id = "p-" + p.id;
+    el.dataset.id = p.id; el.dataset.kampagne = p.kampagne; el.dataset.format = p.format;
+    el.style.setProperty("--k", "var(--" + col + ")"); el.style.setProperty("--k-soft", "var(--" + col + "-soft)");
+    el.innerHTML =
+      '<div class="post-head"><div class="when"><b>' + SLOT[p.slot] + ' ' + fmtDate(p.datum) + '</b><span>' + esc(p.uhrzeit) + '</span></div>' +
+      '<div class="chips"><span class="chip k">' + esc(p.kampagne) + '</span><span class="chip f">' + esc(p.typ) + ' · ' + esc(p.format) + '</span><span class="chip s" data-role="sbadge" hidden>veröffentlicht</span></div></div>' +
+      '<h3>' + esc(p.titel) + '</h3>' +
+      '<p class="botschaft">' + esc(BOTSCHAFT[p.botschaft] || p.botschaft) + '</p>' +
+      '<details class="asset"><summary>Material</summary><p>' + esc(p.asset) + '</p></details>' +
+      '<div><div class="label"><span>Caption (Entwurf)</span><span>' + p.caption.length + ' Zeichen</span></div><p class="caption">' + captionHtml(p.caption) + '</p></div>' +
+      '<div class="tags"><div class="label"><span>Hashtags</span><span>' + tags.length + '</span></div><p>' + esc(tags.join(" ")) + '</p></div>' +
+      '<div class="actions"><button type="button" class="btn primary" data-copy="all">Caption + Hashtags kopieren</button>' +
+      '<button type="button" class="btn" data-copy="caption">Nur Caption</button><button type="button" class="btn" data-copy="tags">Nur Hashtags</button></div>' +
+      '<div><div class="label"><span>Linkziel (Bio / Sticker)</span><button type="button" class="btn" data-copy="link" style="padding:2px 8px;font-size:.7rem">Link kopieren</button></div><p class="link">' + esc(p.link) + '</p></div>' +
+      (p.hinweis ? '<p class="hinweis"><b>Hinweis</b>' + esc(p.hinweis) + '</p>' : '') +
+      '<div class="status"><label for="status-' + p.id + '">Status</label><select id="status-' + p.id + '" data-role="status">' +
+        STATUS.map(function(s){ return '<option value="' + s + '">' + s + '</option>'; }).join("") + '</select>' +
+      '<label for="notiz-' + p.id + '">Notiz</label><input id="notiz-' + p.id + '" data-role="notiz" type="text" maxlength="240" placeholder="Gericht, Termine, Freigabe erledigt …"></div>';
+    el.querySelectorAll("[data-copy]").forEach(function(b){
+      b.addEventListener("click", function(){
+        var k = b.dataset.copy;
+        if (k === "all") copyText(fullText(p), "Caption + Hashtags");
+        else if (k === "caption") copyText(p.caption, "Caption");
+        else if (k === "tags") copyText(tags.join(" "), "Hashtags");
+        else copyText(p.link, "Link");
+      });
+    });
+    el.querySelector('[data-role="status"]').addEventListener("change", function(e){ setState(p.id, {status: e.target.value}); });
+    var ni = el.querySelector('[data-role="notiz"]');
+    ni.addEventListener("input", function(e){
+      clearTimeout(noteTimers[p.id]);
+      noteTimers[p.id] = setTimeout(function(){ setState(p.id, {notiz: e.target.value.trim()}); }, 700);
+    });
+    return el;
+  }
+
+  function render(){
+    var main = $("#weeks"); main.innerHTML = "";
+    var byWeek = {}, order = [];
+    POSTS.forEach(function(p){ var k = weekKey(p.datum); if (!byWeek[k]) { byWeek[k] = []; order.push(k); } byWeek[k].push(p); });
+    var now = isoWeek(new Date());
+    order.forEach(function(k){
+      var kw = k.split("-")[1], w = (DATA.wochen||{})[kw] || {};
+      var sec = document.createElement("section");
+      sec.className = "week"; sec.id = "kw-" + kw; sec.dataset.week = k;
+      sec.innerHTML = '<div class="week-head"><h2>KW ' + kw + '</h2><span class="range">' + esc(w.zeitraum||"") + '</span>' +
+        (k === now ? '<span class="now">Diese Woche</span>' : '') +
+        (w.fokus ? '<p class="fokus">' + esc(w.fokus) + '</p>' : '') + '</div><div class="posts"></div><p class="none" hidden>Nichts offen in dieser Woche.</p>';
+      var grid = sec.querySelector(".posts");
+      byWeek[k].sort(function(a,b){ return a.datum < b.datum ? -1 : 1; }).forEach(function(p){ grid.appendChild(postCard(p)); });
+      main.appendChild(sec);
+    });
+    $("#n-all").textContent = POSTS.length;
+    $("#meta-line").textContent = "Quelle: posts.json · Stand " + (DATA.meta && DATA.meta.stand ? DATA.meta.stand.split("-").reverse().join(".") : "") + " · " + (DATA.meta ? DATA.meta.zeitraum : "");
+    buildKampagneFilter();
+    applyState(); applyFilter();
+  }
+
+  function buildKampagneFilter(){
+    var box = $("#f-kampagne");
+    var seen = [];
+    POSTS.forEach(function(p){ if (seen.indexOf(p.kampagne) < 0) seen.push(p.kampagne); });
+    seen.forEach(function(k){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "chipbtn"; b.dataset.kampagne = k;
+      b.setAttribute("aria-pressed", filter.kampagnen.indexOf(k) >= 0 ? "true" : "false");
+      b.style.setProperty("--k", "var(--" + (KCOLOR[k]||"green") + ")");
+      b.innerHTML = '<span class="dot"></span>' + esc(k);
+      b.addEventListener("click", function(){
+        var i = filter.kampagnen.indexOf(k);
+        if (i >= 0) filter.kampagnen.splice(i, 1); else filter.kampagnen.push(k);
+        b.setAttribute("aria-pressed", i >= 0 ? "false" : "true");
+        lsSet(LS_FILTER, filter); applyFilter();
+      });
+      box.appendChild(b);
+    });
+  }
+
+  function applyFilter(){
+    document.querySelectorAll(".post").forEach(function(el){
+      var show = true;
+      if (filter.kampagnen.length && filter.kampagnen.indexOf(el.dataset.kampagne) < 0) show = false;
+      if (filter.format !== "alle" && el.dataset.format !== filter.format) show = false;
+      if (filter.offen && (st.status[el.dataset.id] || "offen") !== "offen") show = false;
+      el.hidden = !show;
+    });
+    document.querySelectorAll(".week").forEach(function(sec){
+      var visible = sec.querySelectorAll(".post:not([hidden])").length;
+      sec.querySelector(".none").hidden = visible > 0;
+      sec.classList.toggle("quiet", visible === 0 && (filter.kampagnen.length > 0 || filter.format !== "alle"));
+    });
+  }
+
+  function applyState(){
+    var term = 0, pub = 0;
+    POSTS.forEach(function(p){
+      var s = st.status[p.id] || "offen", el = $("#p-" + p.id);
+      if (!el) return;
+      var sel = el.querySelector('[data-role="status"]'); if (sel.value !== s) sel.value = s;
+      var ni = el.querySelector('[data-role="notiz"]'); var n = st.notiz[p.id] || "";
+      if (document.activeElement !== ni && ni.value !== n) ni.value = n;
+      el.classList.toggle("done", s === "veröffentlicht");
+      el.querySelector('[data-role="sbadge"]').hidden = s !== "veröffentlicht";
+      if (s === "terminiert") term++; if (s === "veröffentlicht") pub++;
+    });
+    $("#n-term").textContent = term; $("#n-pub").textContent = pub;
+    var n = POSTS.length || 1;
+    $("#f-pub").style.width = (pub / n * 100) + "%"; $("#f-term").style.width = (term / n * 100) + "%";
+    if (filter.offen) applyFilter();
+  }
+
+  function setState(id, patch){
+    if (patch.status !== undefined) st.status[id] = patch.status;
+    if (patch.notiz !== undefined) st.notiz[id] = patch.notiz;
+    applyState();
+    if (dbMode === "db" && db && canWrite) {
+      var body = {status: st.status[id] || "offen", notiz: st.notiz[id] || "", updatedAt: new Date().toISOString()};
+      var prev = writeChain[id] || Promise.resolve();
+      writeChain[id] = prev.then(function(){ return db.doc("status/" + id).set(body); }).catch(function(e){
+        if (e && e.code === "invalid_argument") { canWrite = false; setControls(false); toast("Keine Schreibrechte: Status nur lokal."); saveLocal(); }
+        else toast("Speichern fehlgeschlagen, bitte noch einmal.");
+      });
+    } else { saveLocal(); }
+  }
+  function saveLocal(){ lsSet(LS_STATE, st); }
+  function setControls(on){
+    document.querySelectorAll('[data-role="status"],[data-role="notiz"]').forEach(function(c){ c.disabled = !on; });
+  }
+
+  function useLocal(reason){
+    dbMode = "local";
+    var saved = lsGet(LS_STATE);
+    if (saved && saved.status) { st = {status: saved.status || {}, notiz: saved.notiz || {}}; }
+    $("#storage-note").textContent = reason || "Status wird nur in diesem Browser gespeichert.";
+    applyState();
+  }
+
+  function setupDb(){
+    var c = window.claude;
+    if (!c || typeof c.use !== "function") { useLocal(); return; }
+    c.use("db").then(function(d){
+      if (!d) { useLocal(); return; }
+      db = d; dbMode = "db";
+      $("#storage-note").textContent = "Status und Notizen werden geteilt gespeichert.";
+      c.use("user").then(function(u){
+        if (!u || typeof u.can !== "function") return;
+        return u.can("data.write").then(function(w){ if (w === false) { canWrite = false; setControls(false); $("#storage-note").textContent = "Nur Lesen: Status kann hier nicht geändert werden."; } });
+      }).catch(function(){});
+      db.collection("status").onSnapshot(function(snap){
+        var s = {}, n = {};
+        snap.docs.forEach(function(doc){ var b = doc.data() || {}; s[doc.id] = b.status || "offen"; n[doc.id] = b.notiz || ""; });
+        st = {status: s, notiz: n};
+        applyState();
+      }, function(){ useLocal("Verbindung zur Datenbank verloren. Status nur in diesem Browser."); });
+    }).catch(function(){ useLocal(); });
+  }
+
+  function setupBar(){
+    var saved = lsGet(LS_FILTER);
+    if (saved) { filter.kampagnen = saved.kampagnen || []; filter.format = saved.format || "alle"; filter.offen = !!saved.offen; }
+    $("#f-offen").checked = filter.offen;
+    $("#f-offen").addEventListener("change", function(e){ filter.offen = e.target.checked; lsSet(LS_FILTER, filter); applyFilter(); });
+    document.querySelectorAll("#f-format [data-format]").forEach(function(b){
+      b.setAttribute("aria-pressed", b.dataset.format === filter.format ? "true" : "false");
+      b.addEventListener("click", function(){
+        filter.format = b.dataset.format;
+        document.querySelectorAll("#f-format [data-format]").forEach(function(x){ x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        lsSet(LS_FILTER, filter); applyFilter();
+      });
+    });
+    $("#btn-today").addEventListener("click", function(){
+      var now = isoWeek(new Date());
+      var sec = document.querySelector('.week[data-week="' + now + '"]');
+      if (!sec) { var all = document.querySelectorAll(".week"); sec = now < (all[0] && all[0].dataset.week) ? all[0] : all[all.length-1]; toast("Außerhalb des Planungszeitraums"); }
+      if (sec) { var y = sec.getBoundingClientRect().top + window.pageYOffset - $("#bar").offsetHeight - 12; window.scrollTo({top: y, behavior: "smooth"}); }
+    });
+  }
+
+  fetch("posts.json", {cache: "no-store"}).then(function(r){ if (!r.ok) throw new Error(r.status); return r.json(); }).then(function(j){
+    DATA = j; POSTS = j.posts || []; SETS = j.hashtag_sets || {};
+    setupBar(); render(); setupDb();
+  }).catch(function(e){
+    var m = $("#weeks"); m.innerHTML = '<p class="state error">posts.json konnte nicht geladen werden. Die Datei muss zusammen mit dieser Seite veröffentlicht sein.</p>';
+  });
+})();
+</script>
